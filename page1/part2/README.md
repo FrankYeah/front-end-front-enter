@@ -10,7 +10,7 @@ Outline
 
 <p>
 
-*  You need to finish home page in this part. 
+*  You need to finish home page in this part, we usually set URL as index.html , beside the home page, we also call it as landing page, the target of landing page is to attract attention from viewer. designer and engineer must treat it seriously.
 *  There are logo and icon ready: 
 *  Layout design from UI/UX ready:
 
