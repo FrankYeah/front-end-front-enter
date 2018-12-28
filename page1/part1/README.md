@@ -30,7 +30,7 @@ Learn GitHub
 <p>
 
 *  Use command line is better than GUI, if you choose VS Code as IDE, It would be convenience to use command line inside.
-*  Ask 「why is that?」 anytime under the develop.
+*  Ask 「why is that?」 anytime under the development.
 
 </p>
 
