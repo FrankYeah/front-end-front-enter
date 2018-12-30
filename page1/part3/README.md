@@ -10,7 +10,7 @@ Outline
 
 <p>
 
-*  Loading effect is like that:
+*  Loading effect is like that: https://frankyeah.github.io/Front-Enter/index.html
 
 </p>
 
