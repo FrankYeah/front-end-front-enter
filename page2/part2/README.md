@@ -10,6 +10,24 @@ Outline
 
 <p>
 
-*  
+*  We have completed the layout on the last part, let's connect data dynamically from server.
+*  Data: https://front-enter.firebaseio.com/list.json
+
+</p>
+
+### Tag
+
+<p>
+
+*  Make every tag clickable, it will switch article dynamically. （全部、小班制、放養制、一對一）
+
+</p>
+
+
+### Slide effect
+
+<p>
+
+*  Complete slide effect on the key visual, make it switch photo every five seconds.（rectangle photo）
 
 </p>
