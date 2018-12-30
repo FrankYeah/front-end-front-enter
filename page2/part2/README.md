@@ -29,5 +29,6 @@ Outline
 <p>
 
 *  Complete slide effect on the key visual, make it switch photo every five seconds.（rectangle photo）
+*  Make some transition / animation effect on it.
 
 </p>
