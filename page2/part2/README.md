@@ -19,7 +19,8 @@ Outline
 
 <p>
 
-*  Make every tag clickable, it will switch article dynamically. （全部、小班制、放養制、一對一）
+*  Make every tag clickable, it will change article dynamically. （全部、小班制、放養制、一對一）
+*  Make city clickable, it will also chage article dynamically.
 
 </p>
 
