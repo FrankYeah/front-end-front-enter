@@ -10,6 +10,6 @@ Outline
 
 <p>
 
-*  Complete layout of desktop and mobile version.
+*  Complete layout of the content page, including desktop and mobile version.
 
 </p>
