@@ -19,7 +19,7 @@ Learn GitHub
 2.  **Clone** your new repository to local, not mine.
 3.  Create a new folder call **Front-Enter** beneath **students/{YOUR_NAME}/**.
 4.  New a **branch** by **git** call **page1-part1**, then **checkout** to that branch to develop.
-5.  add a HTML and CSS file say : 「Front-Enter」 , with **red** color.
+5.  Add a HTML and CSS file say : 「Front-Enter」 , with **red** color.
 6.  **Push** your code from local to remote repository, then send **merge request** to my remote repository branch: **{YOUR_NAME}_develop**
 7.  Wait for my reply or you can go on next part.
 
@@ -30,7 +30,7 @@ Learn GitHub
 <p>
 
 *  Use command line is better than GUI, if you choose VS Code as IDE, It would be convenience to use command line inside.
-*  Ask 「why is that?」 anytime under the develop.
+*  Ask 「why is that?」 anytime under the development.
 
 </p>
 
