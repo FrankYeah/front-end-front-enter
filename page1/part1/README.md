@@ -22,6 +22,7 @@ Learn GitHub
 5.  Add a HTML and CSS file say : 「Front-Enter」 , with **red** color.
 6.  **Push** your code from local to remote repository, then send **merge request** to my remote repository branch: **{YOUR_NAME}_develop**
 7.  Wait for my reply or you can go on next part.
+8.  When I accept your merge request, you need to merge branch back to master, then create a new branch for the next part.
 
 </p>
 

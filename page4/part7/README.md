@@ -20,6 +20,7 @@ Outline
 7.  Setup Lint Tool.
 8.  Setup Google Analytics.
 9.  Try the Unit Test（Mocha, Jest）.
+10. SEO.
 
 </p>
 
