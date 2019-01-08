@@ -6,15 +6,23 @@ Layout
 Outline
 </h2>
 
+### Target
+
+<p>
+
+*  Complete index(home) page layout, including RWD.
+
+</p>
+
 ### Ready to write code
 
 <p>
 
-*  You need to finish home page in this part, we usually set URL as index.html , beside the home page, we also call it as landing page, the target of landing page is to attract attention from viewer. designer and engineer must treat it seriously.
+*  You need to finish index(home) page layout by HTML and CSS in this part, we usually set URL as index.html, beside the home page, we also call it as landing page, the target of landing page is to attract attention from viewer. designer and engineer must treat it seriously.
 *  There are logo and icon ready: https://drive.google.com/open?id=1KA1laH0ZA3LVWWLWWRG2b6nf14ZBznYW
 *  Layout design from UI/UX ready: https://frankyeah.github.io/Front-Enter/index.html
-*  About mobile version, you should shrink the website into 320-479px width and then finish it; about ipad version, you can follow your idea to design it.
-*  Do not mimic my way to design CSS, complete it by yourself is important.
+*  About mobile version, you should shrink the website into 320-479px width and then finish it; about Ipad version, you can follow your idea to design it.
+*  Do not mimic my way to design CSS, complete it by yourself.
 
 
 </p>
