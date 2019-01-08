@@ -40,8 +40,8 @@ Outline
 
 <p>
 
-*  Ugly code is acceptable at the first time, just remember to impove everytime. 
+*  Ugly code is acceptable at the first time, just remember to impove it everytime. 
 *  Do not use any **module** or **package** in the whole class, e.g. jQuery、bootStrap. only HTML、CSS、JavaScript is acceptable.
-*  When you are design effect, you can use transition or animation on your own, do not use **package** as well.
+*  When you design effect, you can use transition or animation on your own, do not use **package** as well.
 
 </p>
