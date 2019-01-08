@@ -18,7 +18,7 @@ Outline
 
 <p>
 
-*  Search layout is like that:
+*  When you click on search button, it will expand, please complete its layout.
 
 </p>
 
