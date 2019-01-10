@@ -1,0 +1,80 @@
+body{
+    margin: 0;
+    font-family: "Noto Sans TC", "華康黑體","微軟正黑體", arial, sans-serif;
+}
+
+section{
+    margin-bottom: 8px;
+    position: relative;
+    top: 90px;
+}
+
+.container{
+/*    width: 100%;*/
+}
+.row{
+    display: table;
+    width: 100%;
+}
+
+/* phone or all 0 - 767px */
+.col-phone-100{
+    width: 100%;
+    float: left;
+}
+.col-phone-75{
+    width: 75%;
+    float: left;
+}
+.col-phone-66{
+    width: 66.67%;
+    float: left;
+}
+.col-phone-50{
+    width: 50%;
+    float: left;
+}
+.col-phone-33{
+    width: 33.33%;
+    float: left;
+}
+.col-phone-25{
+    width: 25%;
+    float: left;
+}
+
+/* tablet 768 - 991px */
+@media(min-width: 768px){
+    .col-tablet-100{
+        width: 100%;
+        float: left;
+    }
+    .col-tablet-75{
+        width: 75%;
+        float: left;
+    }
+    .col-tablet-66{
+        width: 66.67%;
+        float: left;
+    }
+    .col-tablet-50{
+        width: 50%;
+        float: left;
+    }
+    .col-tablet-40{
+        width: 40%;
+        float: left;
+    }
+    .col-tablet-33{
+        width: 33.33%;
+        float: left;
+    }
+    .col-tablet-25{
+        width: 25%;
+        float: left;
+    }
+    .col-tablet-20{
+        width: 20%;
+        float: left;
+    }
+}

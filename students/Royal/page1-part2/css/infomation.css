@@ -1,0 +1,44 @@
+.infomation{
+    background: url(../images/information.jpg);
+    height: 600px;
+    background-size: cover;
+    background-position: center;
+    display: table;
+    width: 100%;
+    position: relative;
+    
+}
+
+.infomation .information_content{
+    color: white;
+    text-align: center;
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.infomation .information_content .infoTitle{
+    font-size: 36px;
+    letter-spacing: 3px;
+    font-weight: bold;
+    margin: 0;
+}
+
+.infomation .information_content .infoDetail{
+    font-size: 24px;
+    letter-spacing: 8px;
+    margin: 8px;
+}
+
+.index_test_btn_container{
+    position: fixed;
+    height: 69px;
+    width: 78px;
+    bottom: 20%;
+    right: 2%;
+    z-index: 1;
+}
+
+.index_test_btn{
+    height: 69px;
+    width: 78px;
+}
