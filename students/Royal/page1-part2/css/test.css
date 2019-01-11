@@ -1,0 +1,38 @@
+.test{
+    background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ),url("../images/test.jpg");
+    background-size: cover;
+    background-position-x: center;
+    background-position-y: bottom;
+    background-attachment: fixed;
+    height: 600px;
+
+    font-size: 18px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.test .test_detail{
+    color: white;
+    text-align: center;
+    margin: 8px;
+    letter-spacing: 3px;
+}
+
+.test .test_btn{
+    color: rgb(26, 216, 211);
+    border: solid 1px;
+    width: 80px;
+    text-align: center;
+    padding: 6px 24px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+@media(max-width: 767px){
+    .test{
+        font-size: 16px;
+    }
+}
