@@ -30,3 +30,9 @@
     border-radius: 8px;
     cursor: pointer;
 }
+
+@media(max-width: 767px){
+    .test{
+        font-size: 16px;
+    }
+}

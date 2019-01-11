@@ -17,10 +17,11 @@ footer .footer_container{
 
 .footer_container .footer_content{
     text-align: center;
+    font-size: 14px;
 }
 
 .footer_container .footer_content.contact{
-    font-size: 12px;
+    font-size: 14px;
 }
 
 
@@ -32,7 +33,7 @@ footer .footer_container{
 }
 
 .footer_container .footer_content.detail{
-    font-size: 14px;
+/*    font-size: 14px;*/
     letter-spacing: 3px;
 }
 
@@ -66,6 +67,6 @@ footer .links_container .link{
     }
 
     footer .links_container{
-        height: ;
+
     }
 }

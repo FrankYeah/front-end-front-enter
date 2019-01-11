@@ -4,6 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Royal Front-Enter</title>
+        <link rel="icon" type="image/png" href="images/favicon.ico">
         
         <link rel="stylesheet" type="text/css" href="css/grid.css">
         <link rel="stylesheet" type="text/css" href="css/infomation.css">
@@ -13,7 +14,6 @@
         <link rel="stylesheet" type="text/css" href="css/footer.css">
         <link rel="stylesheet" type="text/css" href="css/nav.css">
         <link rel="stylesheet" type="text/css" href="css/search.css">
-        <link rel="stylesheet" type="text/css" href="css/top.css">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
         <script
             src="https://code.jquery.com/jquery-3.3.1.min.js"
@@ -25,8 +25,25 @@
     <body>
         <header>
             <nav>
+                <div class="col-phone-25">
+                    <img class="nav_logo" src="images/nav_logo.png">
+                </div>
+                <div class="col-phone-75">
+                    <div class="col-phone-25">
+                        探索
+                    </div>
+                    <div class="col-phone-25">
+                        技能樹
+                    </div>
+                    <div class="col-phone-25">
+                        登入
+                    </div>
+                    <div class="col-phone-25">
+                         <img class="nav_search" src="images/nav_search.png">
+                    </div>
+                </div>
+<!--
                 <img class="nav_logo" src="images/nav_logo.png">
-                <i id="nav_btn" class="fas fa-bars"></i>
                 <ul class="nav_list">
                     <li class="nav_list_items">探索</li>
                     <li class="nav_list_items">技能樹</li>
@@ -35,27 +52,11 @@
                         <img class="nav_search" src="images/nav_search.png">
                     </li>
                 </ul>
+-->
             </nav>
             
         </header>
         <main>
-            
-            <style>
-                .index_test_btn_container{
-                    position: fixed;
-                    height: 69px;
-                    width: 78px;
-                    bottom: 20%;
-                    right: 2%;
-                    z-index: 1;
-                }
-                
-                .index_test_btn{
-                    height: 69px;
-                    width: 78px;
-                }
-            </style>    
-            
             <section>
                 <!--information-->
                 <div class="container">
@@ -66,9 +67,13 @@
                                     <p class="infoTitle">FRONT-ENTER</p>
                                     <p class="infoDetail">前端轉職資訊</p>
                                 </div>
+                                <img src="images/next.svg" class="_next">
+                                
+                                
                                 <a  class="index_test_btn_container" href="https://frankyeah.github.io/Front-Enter/index.html">
                                     <img  class="index_test_btn" src="images/FE_test_go.png">
                                 </a>
+                                
                             </div>                            
                         </div>
                     </div>
@@ -169,6 +174,28 @@
                     </div>
                 </div>
             </section>
+            
+            <style>
+                .top{
+                    height: 180px;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                }
+                
+                .top .top_btn{
+                    width: 36px;
+                    height: 46px;
+                }
+                
+                @media(max-width: 767px){
+                    .top{
+                        height: 120px;
+                    }  
+                }
+            </style>
+            
             <section>
                 <!--top-->
                 <div class="container">
