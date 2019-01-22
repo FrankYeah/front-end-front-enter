@@ -7,12 +7,24 @@ nav{
     
 }
 
+nav .nav_logo_container{
+    
+}
 
 nav .nav_logo_container .nav_logo{
     margin: 12px;
     margin-left: 48px;
     height: 65px;
     width: 134px;
+    cursor: pointer;
+    transition: 0.8s;
+}
+
+nav .nav_logo_container .nav_logo:hover{
+    height: 78px;
+    width: 161px;
+    margin: 6px;
+    margin-left: 36px;
 }
 
 nav .nav_content_container{
@@ -35,9 +47,10 @@ nav .nav_content_container .nav_content:hover{
 }
 
 nav .nav_content_container .nav_search{
-    width: 25px;
-    height: 25px;
+    width: 20px;
+    height: 20px;
 }
+
 
 
 
