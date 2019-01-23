@@ -11,7 +11,7 @@
     width: 36px;
     height: 46px;
     cursor: pointer;
-/*    transition: 0.6s;*/
+    transition: 0.8s;
 }
 
 .top .top_btn:hover{

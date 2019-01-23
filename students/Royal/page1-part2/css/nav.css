@@ -47,10 +47,19 @@ nav .nav_content_container .nav_content:hover{
 }
 
 nav .nav_content_container .nav_search{
-    width: 20px;
-    height: 20px;
+    
 }
 
+nav .nav_content_container .nav_search_icon{
+    width: 20px;
+    height: 20px;
+    transition: all 0.8s;
+}
+
+nav .nav_content_container .nav_search_icon:hover{
+    width: 25px;
+    height: 25px;
+}
 
 
 
@@ -77,7 +86,7 @@ nav .nav_content_container .nav_search{
        margin: 0 8px;
     }
     
-    nav .nav_content_container .nav_search{
+    nav .nav_content_container .nav_search_icon{
         width: 20px;
         height: 20px;        
     }
