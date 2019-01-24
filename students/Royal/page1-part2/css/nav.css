@@ -7,12 +7,24 @@ nav{
     
 }
 
+nav .nav_logo_container{
+    
+}
 
 nav .nav_logo_container .nav_logo{
     margin: 12px;
     margin-left: 48px;
     height: 65px;
     width: 134px;
+    cursor: pointer;
+    transition: 0.8s;
+}
+
+nav .nav_logo_container .nav_logo:hover{
+    height: 78px;
+    width: 161px;
+    margin: 6px;
+    margin-left: 36px;
 }
 
 nav .nav_content_container{
@@ -35,6 +47,16 @@ nav .nav_content_container .nav_content:hover{
 }
 
 nav .nav_content_container .nav_search{
+    
+}
+
+nav .nav_content_container .nav_search_icon{
+    width: 20px;
+    height: 20px;
+    transition: all 0.8s;
+}
+
+nav .nav_content_container .nav_search_icon:hover{
     width: 25px;
     height: 25px;
 }
@@ -64,7 +86,7 @@ nav .nav_content_container .nav_search{
        margin: 0 8px;
     }
     
-    nav .nav_content_container .nav_search{
+    nav .nav_content_container .nav_search_icon{
         width: 20px;
         height: 20px;        
     }

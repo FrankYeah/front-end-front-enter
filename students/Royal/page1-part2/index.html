@@ -1,8 +1,9 @@
 <!DOCTYPE html>
-<html>
+<html id="html">
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <title>Royal Front-Enter</title>
         <link rel="icon" type="image/png" href="images/favicon.ico">
         
@@ -14,20 +15,21 @@
         <link rel="stylesheet" type="text/css" href="css/footer.css">
         <link rel="stylesheet" type="text/css" href="css/nav.css">
         <link rel="stylesheet" type="text/css" href="css/search.css">
+        <link rel="stylesheet" type="text/css" href="css/top.css">
+        <link rel="stylesheet" type="text/css" href="css/animation.css">
+        <link rel="stylesheet" type="text/css" href="css/loading.css">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
-        <script
-            src="https://code.jquery.com/jquery-3.3.1.min.js"
-            integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-            crossorigin="anonymous">
-        </script>
         
+        <script src="js/common.js"></script>
     </head>
-    <body>
-        <header>
-            <nav>
+    <body id="body">
+        <header >
+            <nav id="header">
                 <div class="col-phone-25 col-tablet-50">
                     <div class="nav_logo_container">
-                        <img class="nav_logo" src="images/nav_logo.png">
+                        <a  href="./index.html">
+                            <img class="nav_logo" src="images/nav_logo.png">
+                        </a>
                     </div>
                 </div>
                 <div class="col-phone-75 col-tablet-50">
@@ -35,16 +37,21 @@
                             <span class="nav_content">探索</span>
                             <span class="nav_content">技能樹</span>
                             <span class="nav_content">登入</span>
-                            <a class="nav_content">
-                                <img class="nav_search" src="images/nav_search.png">
+                            <a class="nav_search">
+                                <img class="nav_search_icon" src="images/nav_search.png" onclick="search()">
                             </a>    
-                        
                     </div>
                 </div>
             </nav>
             
         </header>
         <main>
+            <!-- loading page -->
+            <div id="loadingDraw" class="loading_draw"></div>
+            <div id="loadingPage" class="loading_page" >
+                <div class="loading_logo">
+                </div>
+            </div>
             <section>
                 <!--information-->
                 <div class="container">
@@ -55,11 +62,9 @@
                                     <p class="infoTitle">FRONT-ENTER</p>
                                     <p class="infoDetail">前端轉職資訊</p>
                                 </div>
-                                <img src="images/next.svg" class="_next">
-                                
-                                
-                                <a  class="index_test_btn_container" href="https://frankyeah.github.io/Front-Enter/index.html">
-                                    <img  class="index_test_btn" src="images/FE_test_go.png">
+                                <div class="_next"></div>
+                                <a id="indexTestBtnContainer"  class="index_test_btn_container" href="https://frankyeah.github.io/Front-Enter/index.html">
+                                    <img class="index_test_btn" src="images/FE_test_go.png">
                                 </a>
                                 
                             </div>                            
@@ -103,10 +108,21 @@
                 </div>
             </section>
             <section>
-                <!--search-->
+                 <!--search-->
                 <div class="container">
                     <div class="row">
                         <div class="col-phone-100">
+                            <div id="searchBar">
+                                <div class="searchBar_container">
+                                    <p class="searchBar_title">SEARCH</p>
+                                    <form class="searchBar_form">
+                                        <input class="search_input">
+                                        <img class="searchBar_icon search_mic" src="images/searchBar_mic.svg">
+                                        <img class="searchBar_icon search_search" src="images/searchBar_search.png">
+                                    </form>
+                                </div>
+                                <div class="fullSearch" onclick="fullSearchClick()"></div>
+                            </div>
                             <div class="search">
                                 <div class="search_card">
                                     <dic class="search_card_container">
@@ -141,12 +157,9 @@
                                 </div>
                             </div>
                         </div>
-                        
-                        
                     </div>
                 </div>
             </section>
-            
             <section>
                 <!--about-->
                 <div class="container">
@@ -162,35 +175,13 @@
                     </div>
                 </div>
             </section>
-            
-            <style>
-                .top{
-                    height: 180px;
-                    display: flex;
-                    flex-direction: column;
-                    justify-content: center;
-                    align-items: center;
-                }
-                
-                .top .top_btn{
-                    width: 36px;
-                    height: 46px;
-                }
-                
-                @media(max-width: 767px){
-                    .top{
-                        height: 120px;
-                    }  
-                }
-            </style>
-            
             <section>
                 <!--top-->
                 <div class="container">
                     <div class="row">
                         <div class="col-phone-100">
                             <div class="top">
-                                <img class="top_btn" src="images/top.png">
+                                <img class="top_btn" src="images/top.png" href="#body" onclick="backToTop()">
                             </div>
                         </div>
                     </div>
@@ -223,21 +214,19 @@
                         </div>
                         <div class="col-phone-25">
                             <div class="links_container">
-                                <img class="link" src="images/facebook.svg">
-                                <img class="link" src="images/line.png">
+                                <a href="https://www.facebook.com/" target="_blank">
+                                    <img class="link" src="images/facebook.svg">
+                                </a>
+                                <a>
+                                    <img class="link" src="images/line.png">
+                                </a>
+                                
                             </div>
                         </div>
                     </div>
                 </div>
         </footer>
         
-        <script>
-            $(function(){
-                $("#nav_btn").click(function(){
-                    $(".nav_list").slideToggle();
-                })
-            })
-        </script>
-        
+
     </body>
 </html>

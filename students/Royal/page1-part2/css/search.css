@@ -1,118 +1,198 @@
-                .search{
-                    background: url("../images/search.jpg");
-                    background-size: cover;
-                    background-position: center;
-                    background-attachment: fixed;
-                    height: 800px;
-                    
-                    display: flex;
-                    flex-direction: row;
-                    justify-content: center;
-                    align-items: center;
-                }
-                
-                .search .search_card{
-                    background: url("../images/search_card.png");
-                    background-size: cover;
-                    background-position: center;
-                    width: 336px;
-                    height: 445px;
-                    margin: 0 8px;
-                    
-                    position: relative;
-                }
-                
-                .search .search_card .search_card_container{
-                    position: absolute;
-                    top: 88px;
-                    left: 72px;
-                   
-                }
-                
-                .search .search_card .search_card_icon{
-                    width: 42px;
-                    height: 42px;
-                    position: absolute;    
-                    left: 72px;
-                    top: -30px;
-                }
-                
-                .search .search_card .search_card_content{
-                    text-align: center;
-                }
-                
-                .search .search_card .search_card_content.title{
-                    color: rgb(26, 216, 211);
-                    font-size: 24px;
-                }
-                
-                .search .search_card .search_card_content.detail{
-                    letter-spacing: 2px;
-                    line-height: 32px;
-                }
-                
-                .search .search_card .search_card_content.btn{
-                    background-color: rgb(26, 216, 211);
-                    padding: 8px 24px;
-                    border-radius: 8px;
-                    width: 80px;
-                    margin: 32px auto;
-                }
-                
-                .search .search_card .search_card_content > a{
-                    font-size: 18px;
-                    text-decoration: none;
-                    color: white;
-                }
-                
-                .search_card ._line{
-                    border: solid 1px rgb(26, 216, 211);
-                    width: 48px;
-                    margin: auto;
-                }
-                
-                @media(max-width: 767px){
-                    .search{
-                        display: flex;
-                        flex-direction: column;
-                    }
-                    
-                    .search .search_card{
-                        width: 224px;
-                        height: 336px;
-                        margin: 8px;
-                    }
-                    
-                    .search .search_card .search_card_container{
-                        top: 24%;;
-                        left: 18%;
-                        
-                    }
-                    .search .search_card .search_card_icon{
-                        width: 32px;
-                        height: 32px;
-                        left: 36%;
-                        top: -36px;
-                    }
-                    .search .search_card .search_card_content.title{
-                        font-size: 16px;
-                        
-                    }
-                    .search .search_card .search_card_content.detail{
-                        font-size: 14px;
-                        letter-spacing: 0px;
-                        line-height: 24px;
-                    }
-                    .search .search_card .search_card_content.btn{
-                        width: 48px;
+.search{
+    background: url("../images/search.jpg");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    height: 800px;
+    transition: 0.8s;
+    
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.search:hover{
+    height: 840px;
+}
+
+.search .search_card{
+    background: url("../images/search_card.png");
+    background-size: cover;
+    background-position: center;
+    width: 336px;
+    height: 445px;
+    margin: 0 8px;
+
+    position: relative;
+}
+
+.search .search_card .search_card_container{
+    position: absolute;
+    top: 88px;
+    left: 72px;
+
+}
+
+.search .search_card .search_card_icon{
+    width: 42px;
+    height: 42px;
+    position: absolute;    
+    left: 72px;
+    top: -30px;
+    cursor: pointer;
+}
+
+.search .search_card .search_card_icon:hover{
+    opacity: 0.8;
+}
+
+.search .search_card .search_card_content{
+    text-align: center;
+}
+
+.search .search_card .search_card_content.title{
+    color: rgb(26, 216, 211);
+    font-size: 24px;
+}
+
+.search .search_card .search_card_content.detail{
+    letter-spacing: 2px;
+    line-height: 32px;
+}
+
+.search .search_card .search_card_content.btn{
+    background-color: rgb(26, 216, 211);
+    padding: 8px 24px;
+    border-radius: 8px;
+    width: 80px;
+    margin: 32px auto;
+}
+
+.search .search_card .search_card_content > a{
+    font-size: 18px;
+    text-decoration: none;
+    color: white;
+}
+
+.search .search_card .search_card_content > a:hover{
+    opacity: 0.7;
+}
+
+.search_card ._line{
+    border: solid 1px rgb(26, 216, 211);
+    width: 48px;
+    margin: auto;
+}
+
+@media(max-width: 767px){
+    .search{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .search .search_card{
+        width: 224px;
+        height: 336px;
+        margin: 8px;
+    }
+
+    .search .search_card .search_card_container{
+        top: 24%;;
+        left: 18%;
+
+    }
+    .search .search_card .search_card_icon{
+        width: 32px;
+        height: 32px;
+        left: 36%;
+        top: -36px;
+    }
+    .search .search_card .search_card_content.title{
+        font-size: 16px;
+
+    }
+    .search .search_card .search_card_content.detail{
+        font-size: 14px;
+        letter-spacing: 0px;
+        line-height: 24px;
+    }
+    .search .search_card .search_card_content.btn{
+        width: 48px;
 /*                        margin: 8px auto;*/
-                        padding: 8px 16px;
-                    }
-                    .search .search_card .search_card_content > a{
-                        font-size: 14px;
-                    }
-                    .search_card ._line{
-                        width: 32px;
-                    }
-                    
-                }
+        padding: 8px 16px;
+    }
+    .search .search_card .search_card_content > a{
+        font-size: 14px;
+    }
+    .search_card ._line{
+        width: 32px;
+    }
+
+}
+
+/* searchBar layout */
+
+#searchBar{
+    width: 100%;
+    height: 50%;
+    position: fixed;
+    top: 90px;
+    z-index: 1;
+    background-color: rgb(243, 243, 243);
+    display: none;
+}
+
+#searchBar .searchBar_container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 24px;
+}
+
+#searchBar .searchBar_container .searchBar_title{
+    font-size: 18px;
+    color: rgb(26, 216, 211);
+    letter-spacing: 3px;
+}
+
+#searchBar .searchBar_container .searchBar_form{
+    background-color: white;
+    width: 60%;
+    height: 56px;
+    padding: 0 8px;
+    border-radius: 18px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+}
+
+#searchBar .searchBar_container .search_input{
+    width: 90%;
+    height: 32px;
+    border: none;
+}
+
+.searchBar_icon{
+    width: 25px;
+    height: 28px;
+    cursor: pointer;
+}
+
+.fullSearch{
+    z-index: 3;
+    width: 100%;
+    height: 41%;
+    background-color: rgba(0, 0, 0, 0.7);
+    position: fixed;
+    bottom: 0;
+}
+
+@media(max-width: 425px){
+    #searchBar .searchBar_container .searchBar_form{
+        width: 90%;
+    }
+}

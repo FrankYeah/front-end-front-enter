@@ -1,0 +1,22 @@
+/* information animation */
+
+/* arrowUpDownMove animation */
+@-webkit-keyframes arrowUpDownMove{
+    from{bottom: 15%;}
+    to{bottom: 16.5%;}
+}
+
+@keyframes arrowUpDownMove{
+    from{bottom: 15%;}
+    to{bottom: 16.5%;}
+}
+
+@-moz-keyframes arrowUpDownMove{
+    from{bottom: 15%;}
+    to{bottom: 16.5%;}
+}
+
+@-o-keyframes arrowUpDownMove{
+    from{bottom: 15%;}
+    to{bottom: 16.5%;}
+}

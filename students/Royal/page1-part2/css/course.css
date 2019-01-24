@@ -6,13 +6,17 @@
     background-position-x: center;
     background-position-y: bottom;
     height: 600px;
-    
+    transition: 0.8s;
 
     display: flex;
     flex-direction: column;
     justify-content: center;
     text-align: center;
     align-items: center;
+}
+
+.course:hover{
+    height: 640px;
 }
 
 .course .course_title{
@@ -29,6 +33,13 @@
     padding: 4px 24px;
     border-radius: 6px;
     cursor: pointer;
+    transition: 0.8s;
+}
+
+.course .course_btn:hover{
+   padding: 6px 26px; 
+    width: 188px;
+    font-size: 20px;
 }
 
 .course .course_btn > a{

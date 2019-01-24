@@ -22,6 +22,11 @@ footer .footer_container{
 
 .footer_container .footer_content.contact{
     font-size: 14px;
+    cursor: pointer;
+}
+
+.footer_container .footer_content.contact:hover{
+    opacity: 0.8;
 }
 
 
@@ -52,6 +57,11 @@ footer .links_container .link{
     width: 30px;
     height: 30px;
     margin: 8px;
+    cursor: pointer;
+}
+
+footer .links_container .link:hover{
+    opacity: 0.8;
 }
 
 

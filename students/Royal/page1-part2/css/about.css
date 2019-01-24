@@ -2,6 +2,7 @@
     background: url("../images/about.jpg");
     background-size: cover;
     background-position: center;
+    background-repeat:no-repeat;
     height: 700px;
     
     display: flex;
@@ -9,6 +10,11 @@
     text-align: center;
     align-items: center;
     justify-content:flex-end;
+    transition: 0.8s;
+}
+
+.about:hover{
+    height: 720px;
 }
 
 
