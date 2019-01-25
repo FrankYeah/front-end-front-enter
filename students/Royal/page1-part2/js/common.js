@@ -5,12 +5,12 @@ function loadingPage(){
     document.getElementById("loadingDraw").style.height = "0";
     document.getElementById("loadingDraw").style.opacity = "0.9";
     document.getElementById("header").style.marginTop = "0px";
-    document.getElementById("indexTestBtnContainer").style.animation = "indexTestBtnMove 1.5s 0s ease 1 alternate running";
+    document.getElementById("asideBtnContainer").style.animation = "asideBtnMove 1.5s 0s ease 1 alternate running";
 }
 setTimeout("loadingPage()", 900);
 
 /* searchBar layout */
-var search_btn = false;
+let search_btn = false;
 function search(){
 
     if(search_btn == false){
