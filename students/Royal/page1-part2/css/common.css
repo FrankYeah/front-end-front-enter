@@ -38,6 +38,10 @@ nav .nav_content_container{
     margin-right: 64px;
 }
 
+nav .nav_content_container > a{
+    
+}
+
 nav .nav_content_container .nav_link{
     text-decoration: none;
     
@@ -54,7 +58,6 @@ nav .nav_content_container .nav_content:hover{
 }
 
 nav .nav_content_container .nav_search{
-    
 }
 
 nav .nav_content_container .nav_search_icon{

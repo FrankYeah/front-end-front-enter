@@ -14,7 +14,7 @@
         <link rel="stylesheet" type="text/css" href="css/loading.css">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
         
-        <script src="js/common.js"></script>
+        
 
     </head>
     <body id="body">
@@ -67,13 +67,21 @@
                 </div>
                 <div class="fullSearch" onclick="fullSearchClick()"></div>
             </div>   
+            <!-- slide poster -->
             <section class="slidePoster_section">
-<!--             slide poster -->
-                <div class="container">
-                    <div class="row">
-                        <div class="slide_poster">
-                            <p class="slide_title">蒐羅前端學校</p>
-                        </div>
+                <div class="slide_img" id="slideImg1">
+                    <div class="slide_title_container">
+                        <p class="slide_title">蒐羅前端學校</p>
+                    </div>
+                </div>
+                <div class="slide_img" id="slideImg2">
+                    <div class="slide_title_container">
+                        <p class="slide_title">蒐羅前端學校</p>
+                    </div>
+                </div>
+                <div class="slide_img" id="slideImg3">
+                    <div class="slide_title_container">
+                        <p class="slide_title">蒐羅前端學校</p>
                     </div>
                 </div>
             </section>
@@ -84,204 +92,22 @@
                         <div class="tag_box">
                             <div></div>
                             <div></div>
-                            <div id="getAllArticle" class="tag_title">全部</div>
-                            <div id="smallClass" class="tag_title">小班制</div>
-                            <div id="letItGo" class="tag_title">放養制</div>
-                            <div id="oneByOne" class="tag_title">一對一</div>
+                            <div id="getAllArticle" class="tag_title" onclick="getAllArticle()">全部</div>
+                            <div id="smallClass" class="tag_title" onclick="smallClass()">小班制</div>
+                            <div id="letItGo" class="tag_title" onclick="letItGo()">放養制</div>
+                            <div id="oneByOne" class="tag_title" onclick="oneByone()">一對一</div>
                             <div></div>
                             <div></div>
                         </div>
                     </div>
                 </div>
             </section>
-            <section >
+            <section id="articleSection">
             <!-- article -->
-                <div class="container">
-                    <div class="row">
-                        <div class="article">
-                            <div id="article0" class="article_card">
-                                <div id="location_container0">
-                                    <div id="locationImg0" class="location_img"></div>
-                                    <a id="aLocation0">
-                                        <p class="article_location">台北</p>
-                                    </a>
-                                </div>
-                                <a class="article_content0" href="">
-                                    <div class="article_img_container">
-                                        <img class="article_img" src="images/article0.jpg">
-                                    </div>
-                                    <p class="article_title">彭彭的課程教學</p>
-                                    <p class="article_detail">彭彭喜歡技術、更喜歡與人互動，是位略懂商業經營和行銷策略的務實創業者。</p>
-                                    <div class="read_more">
-                                        <div class="read_more_word">read more</div>
-                                        <div class="read_more_icon"></div>
-                                    </div>
-                                </a>
-                                <div class="tag_line"></div>
-                            </div>
-                            <div id="article1" class="article_card">
-                                <div id="location_container1">
-                                    <div id="locationImg1" class="location_img"></div>
-                                    <a id="aLocation1">
-                                        <p class="article_location">台北</p>
-                                    </a>
-                                </div>
-                                <a class="article_content1" href="">
-                                    <div class="article_img_container">
-                                        <img class="article_img" src="images/article1.jpg">
-                                    </div>
-                                    <p class="article_title">飛肯設計學苑</p>
-                                    <p class="article_detail">飛肯設計學苑的講師均來自業界，上課時會帶著同學實做練習，並附有教學範例。</p>
-                                    <div class="read_more">
-                                        <div class="read_more_word">read more</div>
-                                        <div class="read_more_icon"></div>
-                                    </div>
-                                </a>
-                                <div class="tag_line"></div>
-                            </div>
-                            <div id="article2" class="article_card">
-                                <div id="location_container2">
-                                    <div id="locationImg2" class="location_img"></div>
-                                    <a id="aLocation2">
-                                        <p class="article_location">台北</p>
-                                    </a>
-                                </div>
-                                <a class="article_content2" href="">
-                                    <div class="article_img_container">
-                                        <img class="article_img" src="images/article2.jpg">
-                                    </div>
-                                    <p class="article_title">台大資訊系統訓練班</p>
-                                    <p class="article_detail">此課程適合學習網頁設計的初學者，及想要學習 JavaScript / AJAX 動態技術的網頁設計師。</p>
-                                    <div class="read_more">
-                                        <div class="read_more_word">read more</div>
-                                        <div class="read_more_icon"></div>
-                                    </div>
-                                </a>
-                                <div class="tag_line"></div>
-                            </div>
-                            <div id="article" class="article_card">
-                                <div id="location_container3">
-                                    <div id="locationImg3" class="location_img"></div>
-                                    <a id="aLocation3">
-                                        <p class="article_location">各地</p>
-                                    </a>
-                                </div>
-                                <a class="article_content3" href="">
-                                    <div class="article_img_container">
-                                        <img class="article_img" src="images/article3.jpg">
-                                    </div>
-                                    <p class="article_title">赫綵電腦</p>
-                                    <p class="article_detail">赫綵的講師具備業界實務經驗，網頁發展日新月異，掌握最新趨勢與資訊最重要，讓你技術不落人後。</p>
-                                    <div class="read_more">
-                                        <div class="read_more_word">read more</div>
-                                        <div class="read_more_icon"></div>
-                                    </div>
-                                </a>
-                                <div class="tag_line"></div>
-                            </div>
-                            <div id="article4" class="article_card">
-                                <div id="location_container4">
-                                    <div id="locationImg4" class="location_img"></div>
-                                    <a id="aLocation4">
-                                        <p class="article_location">台北</p>
-                                    </a>
-                                </div>
-                                <a class="article_content4" href="">
-                                    <div class="article_img_container">
-                                        <img class="article_img" src="images/article4.jpg">
-                                    </div>
-                                    <p class="article_title">AppWorks School</p>
-                                    <p class="article_detail">AppWorks School 均採實作導向方式，培養有能力解決問題、具開發經驗的程式設計師。</p>
-                                    <div class="read_more">
-                                        <div class="read_more_word">read more</div>
-                                        <div class="read_more_icon"></div>
-                                    </div>
-                                </a>
-                                <div class="tag_line"></div>
-                            </div>
-                            <div id="article5" class="article_card">
-                                <div id="location_container5">
-                                    <div id="locationImg5" class="location_img"></div>
-                                    <a id="aLocation5">
-                                        <p class="article_location">高雄</p>
-                                    </a>
-                                </div>
-                                <a class="article_content5" href="">
-                                    <div class="article_img_container">
-                                        <img class="article_img" src="images/article5.jpg">
-                                    </div>
-                                    <p class="article_title">六角學院</p>
-                                    <p class="article_detail">六角學院課程種類齊全，加上線上學習達成高效學習，同時也是帶您學到會的線上課程。</p>
-                                    <div class="read_more">
-                                        <div class="read_more_word">read more</div>
-                                        <div class="read_more_icon"></div>
-                                    </div>
-                                </a>
-                                <div class="tag_line"></div>
-                            </div>
-                            <div id="article6" class="article_card">
-                                <div id="location_container6">
-                                    <div id="locationImg6" class="location_img"></div>
-                                    <a id="aLocation2">
-                                        <p class="article_location">台北</p>
-                                    </a>
-                                </div>
-                                <a class="article_content6" href="">
-                                    <div class="article_img_container">
-                                        <img class="article_img" src="images/article6.jpg">
-                                    </div>
-                                    <p class="article_title">五倍紅寶石</p>
-                                    <p class="article_detail">五倍規劃從入門到中高階的專業網站開發課程，不管是初學或已有基礎，都可以快速上手。</p>
-                                    <div class="read_more">
-                                        <div class="read_more_word">read more</div>
-                                        <div class="read_more_icon"></div>
-                                    </div>
-                                </a>
-                                <div class="tag_line"></div>
-                            </div>
-                            <div id="article7" class="article_card">
-                                <div id="location_container7">
-                                    <div id="locationImg7" class="location_img"></div>
-                                    <a id="aLocation7">
-                                        <p class="article_location">各地</p>
-                                    </a>
-                                </div>
-                                <a class="article_content7" href="">
-                                    <div class="article_img_container">
-                                        <img class="article_img" src="images/article7.jpg">
-                                    </div>
-                                    <p class="article_title">Udemy</p>
-                                    <p class="article_detail">Udemy 為不同類型的專家、講師提供平台，以免費或收費形式提供課程給大眾。</p>
-                                    <div class="read_more">
-                                        <div class="read_more_word">read more</div>
-                                        <div class="read_more_icon"></div>
-                                    </div>
-                                </a>
-                                <div class="tag_line"></div>
-                            </div>
-                            <div id="article8" class="article_card">
-                                <div id="location_container8">
-                                    <div id="locationImg8" class="location_img"></div>
-                                    <a id="aLocation8">
-                                        <p class="article_location">台北</p>
-                                    </a>
-                                </div>
-                                <a class="article_content8" href="">
-                                    <div class="article_img_container">
-                                        <img class="article_img" src="images/article8.jpg">
-                                    </div>
-                                    <p class="article_title">Uxabc</p>
-                                    <p class="article_detail">UXabc 帶您深入淺出地了解網頁前端。課程含專題實作，手刻出自己的第一個網站。</p>
-                                    <div class="read_more">
-                                        <div class="read_more_word">read more</div>
-                                        <div class="read_more_icon"></div>
-                                    </div>
-                                </a>
-                                <div class="tag_line"></div>
-                            </div>
-                        </div>
-                    </div>
+<!--
+                <div id="article">
                 </div>
+-->
             </section>
             <section>
                 <!--top-->
@@ -333,5 +159,7 @@
                 </div>
             </div>
         </footer>
+        <script src="js/common.js"></script>
+        <script src="js/article.js"></script>
     </body>
 </html>
