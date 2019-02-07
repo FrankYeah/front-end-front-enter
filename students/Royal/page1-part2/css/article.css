@@ -1,6 +1,6 @@
 /* slide poster */
 .slidePoster_section{
-    margin: 0;
+     margin-bottom: 8px;
 }
 .slide_poster{
     background: url(../images/information.jpg);
@@ -45,7 +45,6 @@
 }
 
 /* article css */
-
 .article{
     display: flex;
     flex-direction: row;
@@ -144,14 +143,14 @@
     justify-content: center;
     align-items:center;
     width: 240px;
-    margin: 5px 0px 50px 0px;; 
+    margin: 5px 0px 50px 0px;
 }
 
 .article .article_card > a > .read_more .read_more_word{
     color: rgb(26,216,211);
     width: 120px;
     text-align: right;
-    transition: margin-right 1s
+    transition: margin-right 1s;
 }
 
 .article .article_card > a > .read_more .read_more_word:hover{
@@ -177,10 +176,13 @@
 }
 
 @media(max-width: 841px){
+    .article{
+        padding: 0 0px;
+    }
     .article_card{
         border: none;   
-        padding: 0 15px;
-        margin-top: 0px;
+        padding: 0 8px;
+        margin: 0px 0px 10px 0px;
     }
 
     .article_card .tag_line{
