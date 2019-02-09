@@ -226,7 +226,7 @@ function filterLocation(e){
     function getReadMoreWord(getData){
         var createReadMoreWord = document.createElement("div");
         createReadMoreWord.setAttribute("class","read_more_word");
-        createReadMoreWord.innerHTML = "readmore";
+        createReadMoreWord.innerHTML = "read more";
         document.getElementById("readMore" + i).appendChild(createReadMoreWord);
     }
 

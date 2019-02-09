@@ -193,6 +193,8 @@ nav .nav_content_container .nav_search_icon:hover{
     width: 90%;
     height: 32px;
     border: none;
+    padding-left: 8px;
+    font-size: 16px;
 }
 
 .searchBar_icon{
