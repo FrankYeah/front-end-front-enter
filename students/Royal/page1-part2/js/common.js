@@ -28,11 +28,20 @@ setTimeout("loadingPage()", 900);
         document.getElementById("searchBar").style.display = "none";
             search_btn = false;
     }
+
+var transcript;
+    /* search Mic */
+    document.getElementById("searchMic").onclick = function(){
+        searchMic();
+    }
+    
+    function searchMic(){
+        recognition.start();
+    }
     
     /* search Mic */
     window.SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
     const recognition = new SpeechRecognition();
-    var searchIndex;
     recognition.addEventListener('result', e => {
          transcript = Array.from(e.results)
         .map(result => result[0])
@@ -41,54 +50,25 @@ setTimeout("loadingPage()", 900);
         document.getElementById("searchInput").setAttribute("value",transcript);
     });
 
-    
 
     /* search click */
-    var filterData;
     document.getElementById("searchSearch").onclick = function(){
         searchIndex = document.getElementById("searchInput").value;
         if(!searchIndex){
             alert("請輸入文字");
         }else{
-            searchArticle();
-            
+            window.location = 'article.html?id='+ searchIndex; 
         }
     }
     
-    function searchArticle(){
-        filterData = [];
-        for(i = 0; i <= getData.length; i++){
-            for(var key in getData[i]){
-                var index = getData[i][key];
-                var index = index.toString();
-                if(index.indexOf(searchIndex) != -1){
-                   filterData.push(getData[i]);
-//                    console.log(filterData);
-                    break;
-                }
-            }
+    /* enter on searchInput trigger search click */
+    var input = document.getElementById("searchInput");
+    input.onkeypress = (event) => {
+        if(event.keyCode == 13){
+            event.preventDefault();
+            document.getElementById("searchSearch").click();
         }
-        if(filterData ==""){
-            alert("查無資料");
-        }else{
-            getFilterData(filterData);
-            console.log(filterData)
-            fullSearchClick();
-        }
-            
     }
-    
-    /* search Mic */
-    document.getElementById("searchMic").onclick = function(){
-        searchMic();
-    }
-    
-    
-    function searchMic(){
-        recognition.start();
-    }
-
-
 
 /* back to top */
 let timer = null;
