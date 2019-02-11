@@ -7,11 +7,40 @@ request.send();
 request.onload = function(){
     
     getData = JSON.parse(request.response);
-    getIniData();
+    
     
     slideImg(getData);
+    
+    searchIndex = new URL(document.location).searchParams.get("id");
+    if(searchIndex != null){
+        searchArticle();
+    }else{
+        getIniData();
+    }
 }
 
+/* 將搜尋到的article放到filterData */
+function searchArticle(){
+//    removeArticle(getData);
+    getArticle(getData);
+    filterData = [];
+    for(i = 0; i <= getData.length; i++){
+        for(var key in getData[i]){
+            if(key == "name" || key == "city" ||key == "teachWay" || key == "classType" || key == "skill"){
+                var index = getData[i][key].toString();
+                if(index.indexOf(searchIndex) != -1){
+                    filterData.push(getData[i]);
+                    break;
+                }   
+            }
+        }
+    }
+    if(filterData ==""){
+        getIniData();
+    }else{
+        getFilterData(filterData);
+    }
+}
 
 
 //get initial data
@@ -226,7 +255,7 @@ function filterLocation(e){
     function getReadMoreWord(getData){
         var createReadMoreWord = document.createElement("div");
         createReadMoreWord.setAttribute("class","read_more_word");
-        createReadMoreWord.innerHTML = "readmore";
+        createReadMoreWord.innerHTML = "read more";
         document.getElementById("readMore" + i).appendChild(createReadMoreWord);
     }
 
