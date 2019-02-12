@@ -197,14 +197,12 @@ function filterLocation(e){
         
     }
 
-
-
     /* createArticleContent */
     function getArticleContent(getData){
         var createArticleContent = document.createElement("a");
         createArticleContent.setAttribute("id","articleContent" + i);
         createArticleContent.setAttribute("class","article_content");
-        createArticleContent.setAttribute("href"," ");
+        createArticleContent.setAttribute("href","content.html?id=" + getData[i]["creatTime"]);
         document.getElementById("article" + i).appendChild(createArticleContent);
     }
 

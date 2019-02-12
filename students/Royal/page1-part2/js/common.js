@@ -33,6 +33,7 @@ var transcript;
     /* search Mic */
     document.getElementById("searchMic").onclick = function(){
         searchMic();
+        
     }
     
     function searchMic(){
