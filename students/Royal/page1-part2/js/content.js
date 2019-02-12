@@ -58,7 +58,7 @@ function contentChartClick(e){
     var thisImg = getComputedStyle(e).background;
     thisImg = thisImg.split(" ")[4];
     document.getElementById("fullSlideImg").style.background = thisImg + "50% / cover no-repeat";
-     fullSlide();
+     fullSlide();git
 }
 
 
