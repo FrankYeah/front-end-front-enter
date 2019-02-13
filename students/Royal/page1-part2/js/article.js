@@ -6,7 +6,7 @@ request.send();
 
 request.onload = function(){
     
-    getData = JSON.parse(request.response);
+    getData = JSON.parse(request.response);gi
     
     
     slideImg(getData);
