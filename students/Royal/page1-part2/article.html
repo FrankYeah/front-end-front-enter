@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html id="html">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Royal 文章列表</title>
+        <link rel="icon" type="image/png" href="images/favicon.ico">
+        
+        
+        <link rel="stylesheet" type="text/css" href="css/grid.css">
+        <link rel="stylesheet" type="text/css" href="css/common.css">
+        <link rel="stylesheet" type="text/css" href="css/article.css">
+        <link rel="stylesheet" type="text/css" href="css/loading.css">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+        
+        
+
+    </head>
+    <body id="body">
+        <header >
+            <nav id="header">
+                <div class="col-phone-25 col-tablet-50">
+                    <div class="nav_logo_container">
+                        <a  href="./index.html">
+                            <img class="nav_logo" src="images/nav_logo.png">
+                        </a>
+                    </div>
+                </div>
+                <div class="col-phone-75 col-tablet-50">
+                    <div class="nav_content_container">
+                        <a class="nav_link" href="./article.html">
+                            <span class="nav_content" >探索</span>
+                        </a>
+                        <a class="nav_link" href="./article.html">
+                            <span class="nav_content">技能樹</span>
+                        </a>
+                        <span class="nav_content">登入</span>
+                        <a class="nav_search">
+                            <img class="nav_search_icon" src="images/nav_search.png" onclick="search()">
+                        </a>    
+                    </div>
+                </div>
+            </nav>
+            
+        </header>
+        <main>
+            <!-- loading page -->
+            <div id="loadingDraw" class="loading_draw"></div>
+            <div id="loadingPage" class="loading_page" >
+                <div class="loading_logo">
+                </div>
+            </div>
+            <!-- aside btn -->
+            <a id="asideBtnContainer"  class="aside_container" href="https://frankyeah.github.io/Front-Enter/index.html">
+                <img class="aside_btn" src="images/FE_test_go.png">
+            </a>
+            <!-- search bar -->
+            <div id="searchBar">
+                <div class="searchBar_container">
+                    <p class="searchBar_title">SEARCH</p>
+                    <form class="searchBar_form" id="searchBar_Form">
+                        <input class="search_input" id="searchInput">
+                        <img class="searchBar_icon search_mic" id="searchMic" src="images/searchBar_mic.svg">
+                        <img class="searchBar_icon search_search" id="searchSearch" src="images/searchBar_search.png">
+                    </form>
+                </div>
+                <div class="fullSearch" onclick="fullSearchClick()"></div>
+            </div>   
+            <!-- slide poster -->
+            <section class="slidePoster_section">
+                <div class="slide_img" id="slideImg1">
+                    <div class="slide_title_container">
+                        <p class="slide_title">蒐羅前端學校</p>
+                    </div>
+                </div>
+                <div class="slide_img" id="slideImg2">
+                    <div class="slide_title_container">
+                        <p class="slide_title">蒐羅前端學校</p>
+                    </div>
+                </div>
+                <div class="slide_img" id="slideImg3">
+                    <div class="slide_title_container">
+                        <p class="slide_title">蒐羅前端學校</p>
+                    </div>
+                </div>
+            </section>
+            <!-- tag box -->
+            <section class="tagBox_section">
+                <div class="container">
+                    <div class="row">
+                        <div class="tag_box">
+                            <div></div>
+                            <div></div>
+                            <div id="getAllArticle" class="tag_title" onclick="getAllArticle()">全部</div>
+                            <div id="smallClass" class="tag_title" onclick="smallClass()">小班制</div>
+                            <div id="letItGo" class="tag_title" onclick="letItGo()">放養制</div>
+                            <div id="oneByOne" class="tag_title" onclick="oneByone()">一對一</div>
+                            <div></div>
+                            <div></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section id="articleSection">
+            </section>
+            <!--top-->
+            <section>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-phone-100">
+                            <div class="top">
+                                <img class="top_btn" src="images/top.png" href="#body" onclick="backToTop()">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <footer>
+            <div class="container">
+                <div class="row">
+                    <div class="col-phone-75">
+                        <div class="row">
+                            <div class="col-phone-100 col-tablet-20">
+                                <div class="footer_container">
+                                    <span class="footer_content contact">聯絡</span>
+                                </div>
+                            </div>
+                            <div class="col-phone-100 col-tablet-40">
+                                <div class="footer_container">
+                                    <p class="footer_content title">M</p>
+                                    <p class="footer_content detail">0917-111-111</p>
+                                </div>
+                            </div>
+                            <div class="col-phone-100 col-tablet-40">
+                                <div class="footer_container">
+                                    <span class="footer_content title">E</span>
+                                    <span class="footer_content detail">aaaaaa@gmail.com</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-phone-25">
+                        <div class="links_container">
+                            <a href="https://www.facebook.com/" target="_blank">
+                                <img class="link" src="images/facebook.svg">
+                            </a>
+                            <a>
+                                <img class="link" src="images/line.png">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <script src="js/common.js"></script>
+        <script src="js/article.js"></script>
+        
+        
+        
+        
+    </body>
+</html>

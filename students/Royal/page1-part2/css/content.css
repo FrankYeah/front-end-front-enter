@@ -1,0 +1,227 @@
+/* poster css */
+
+.poster_section .poster{
+    width: 100%;
+    height: 380px;
+/*    background-size: cover;*/
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.poster_section .poster .poster_title{
+    font-size: 24px;
+    color: white;
+    background-color: rgba(128,128,128,0.7);
+    padding: 10px;
+    font-weight: bold;
+    letter-spacing: 10px;
+    border-radius: 5px;
+    padding-left: 23px;
+}
+
+/* content section css */
+.content_section{
+    display: flex;
+    display: row;
+    margin: 80px 30px;
+}
+
+.content_section .content_chart_container{
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+}
+.content_section .content_chart_container .content_chart{
+    height: 266px;
+    width: 400px;  
+    border-radius: 5px;
+    margin: 20px;
+    cursor: pointer;
+    max-width: 100%;
+    max-height: 100%;
+    transition: all 0.6s;
+}
+
+.content_section .content_chart_container .content_chart:hover{
+    height: 286px;
+    width: 420px;
+}
+
+.content_section .content_chart_container .content_chart.chart01{
+    background: url('../images/content01.jpg') 50% / cover no-repeat;
+}
+.content_section .content_chart_container .content_chart.chart02{
+    background: url('../images/content02.jpg') 50% / cover no-repeat;
+}
+.content_section .content_chart_container .content_chart.chart03{
+    background: url('../images/content03.jpg') 50% / cover no-repeat;
+}
+.content_section .content_chart_container .content_chart.chart04{
+    background: url('../images/content04.jpg') 50% / cover no-repeat;
+}
+.content_section .content_chart_container .content_chart.chart05{
+    background: url('../images/content05.jpg') 50% / cover no-repeat;
+}
+
+.content_section .content_content{
+    width: 50%;
+}
+
+.content_section .content_content p{
+    letter-spacing: 3px;
+}
+
+.content_section .content_content .content_title{
+    font-size: 20px;
+    color: rgb(26, 216, 211);
+    font-weight: bold; 
+    letter-spacing: 
+}
+
+.content_section .content_content .content_text{
+    color: rgb(128, 128, 128);
+    line-height: 28px;
+}
+
+.content_section .content_content .box_title{
+    text-align: center;
+    color: rgb(26, 216, 211);
+    font-size: 18px;             
+    padding-top: 100px;
+    line-height: 8px;
+}
+
+.content_section .content_content .box_title_underline{
+    border-bottom: 1px solid rgb(26, 216, 211);
+    width: 20px;
+    margin: auto;
+}
+
+.content_section .content_content .box_table{
+    width: 600px;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+
+}
+
+.content_section .content_content .box_table .box_row{
+    width: 400px;
+    height: 40px;
+    display: flex;
+    flex-direction: row;
+    margin: auto;
+    margin-top: 20px;
+    border-bottom: solid 1px rgba(197, 197, 197, 0.8);
+    padding-bottom: 12px;
+    align-items: center;
+}
+
+.content_section .content_content .box_table .box_row .box_row_title{
+    width: 100px;
+    color: rgb(26, 216, 211);
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.content_section .content_content .box_table .box_row  .box_index{
+    color: rgb(128, 128, 128);
+}
+
+@media(max-width: 650px){
+    .content_section .content_chart_container .content_chart{
+        height: 240px;
+        width: 340px;
+    }
+
+    .content_section .content_content .box_table{
+        width: auto;
+    }
+
+
+    .content_section .content_content .box_table .box_row{
+        width: 100%;
+        font-size: 12px;
+    }
+
+    .content_section .content_content .box_table .box_row .box_row_title{
+        font-size: 12px;
+        width:60px;
+    }
+
+}
+
+@media(max-width: 1200px){
+    .content_section{
+        flex-direction: column;
+    }
+
+    .content_section .content_chart_container{
+        margin: auto;
+        width: 80%;
+    }
+
+    .content_section .content_chart_container .content_chart.chart02{
+        display: none;
+    }
+    .content_section .content_chart_container .content_chart.chart03{
+        display: none;
+    }
+    .content_section .content_chart_container .content_chart.chart04{
+        display: none;
+    }
+    .content_section .content_chart_container .content_chart.chart05{
+        display: none;
+    }
+
+     .content_section .content_content{
+        margin: auto;
+        width: 88%;
+    }
+}
+
+/* full slide css */
+#fullSlideback{
+    width: 100%;
+    height: 100%;
+    display: none;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    z-index: 2;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+#fullSlideback #fullSlideImg{
+    width: 750px;
+    height: 550px;
+}
+
+#fullSlideback #fullSlideLeft{
+    width: 50px;
+    height: 50px;
+    background: url("../images/left-arrow.png");
+    background-size: cover;
+    cursor: pointer;
+    z-index: 3;
+}
+
+#fullSlideback #fullSlideRight{
+    width: 50px;
+    height: 50px;
+    background: url("../images/right-arrow.png");
+    background-size: cover;
+    cursor: pointer;
+}
+
+@media(max-width: 410px){
+    #fullSlideback #fullSlideImg{
+        width: 340px;
+        height: 220px;
+    }
+}
