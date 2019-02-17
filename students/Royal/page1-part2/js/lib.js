@@ -1,4 +1,6 @@
-let app ={};
+let app ={
+    card:{}
+};
 app.get = function (selector){
     return document.querySelector(selector);
 }
@@ -11,4 +13,3 @@ app.createElement = function (dom, className, id, append, text, func){
     document.getElementById(append).appendChild(newElement);
     newElement.onclick = func;
 }
-

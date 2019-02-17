@@ -1,9 +1,3 @@
-var requestURL = "https://front-enter.firebaseio.com/list.json";
-var request = new XMLHttpRequest();
-request.open("GET",requestURL,true);
-//request.responseType = "json";
-request.send();
-
 request.onload = function(){
     
     getData = JSON.parse(request.response);
@@ -58,7 +52,8 @@ function contentChartClick(e){
     var thisImg = getComputedStyle(e).background;
     thisImg = thisImg.split(" ")[4];
     document.getElementById("fullSlideImg").style.background = thisImg + "50% / cover no-repeat";
-     fullSlide();git
+     fullSlide();
+    
 }
 
 

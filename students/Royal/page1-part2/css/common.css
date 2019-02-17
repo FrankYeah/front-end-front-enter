@@ -111,7 +111,7 @@ nav .nav_content_container .nav_search_icon:hover{
     width: 78px;
     bottom: 20%;
     right: 2%;
-    z-index: 10;
+    z-index: 1;
     opacity: 0.8;
     transition: bottom 4s ease;
 
@@ -120,6 +120,7 @@ nav .nav_content_container .nav_search_icon:hover{
 .aside_container .aside_btn{
     height: 69px;
     width: 78px;
+    cursor: pointer;
 }
 
 .aside_container:hover{
@@ -228,24 +229,51 @@ nav .nav_content_container .nav_search_icon:hover{
     background-color: rgba(192, 192, 192, 0.3);
     z-index: 1;
 
-    display: none;
+    display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
+.test_back_img{
+    width: 350px;
+    height: 450px;
+    background: url("../images/content01.jpg");
+/*    background-size: cover;*/
+    position: absolute;
+    opacity: 0.1;
+    z-index: 2;
+}
+
+.test_back_color{
+    width: 350px;
+    height: 450px;
+    background-color: rgb(26,216,211);
+    position: absolute;
+}
+
+
 .test_layout .test_container{
     width: 350px;
     height: 450px;
-    background-color: rgba(26,216,211, 0.8);
-    letter-spacing: 3px;
 
+}
+
+.test_layout .test_container .test_card{
+    width: inherit;
+    height: inherit;
+    position: absolute;
+    letter-spacing: 3px;
+/*    background-color:rgb(26,216,211);*/
     display: flex;
     flex-direction: column;
     align-items: center;
+    z-index: 3;
 }
 
-.test_layout .test_container .test_header{
+
+
+.test_layout .test_container .test_card .test_header{
     color: white;
     font-size: 24px;
     font-weight: bold;
@@ -253,14 +281,127 @@ nav .nav_content_container .nav_search_icon:hover{
     padding-top: 50px;
 }
 
-.test_layout .test_container .test_preface{
+.test_layout .test_container .test_card .test_preface{
     color: white;
     font-size: 16px;
     padding: 20px 50px 0 50px;
     line-height: 24px;
 }
 
-.test_layout .test_container .test_start_btn{
+.test_question_title{
+    font-size: 18px;
+    color: white;
+    margin: 32px;
+}
+
+.test_question_count{
+    color: rgba(255, 255, 255,.7);
+    
+}
+
+
+
+.test_question_option{
+    background-color: white;
+    width: 135px;
+    text-align: center;
+    color: rgb(26,216,211);
+    border-radius: 8px;
+    cursor: pointer;
+    line-height: 40px;
+    font-size: 18px;
+    margin: 5px auto;
+    padding: 0px 23px 0px 23px;
+}
+
+.test_question_option:hover{
+    color: white;
+    background-color: rgba(255,255,255,.5);
+}
+
+.test_final_pie_border{
+    width: 150px;
+    height: 150px;
+    border: 5px solid white;
+    border-radius: 50%;
+    position: absolute;
+    top: 98px;
+}
+
+.test_final_pie_gradient{
+    width: 150px;
+    height: 150px;
+    background: linear-gradient(rgb(26,216,211), #1cb5e0);
+    border: 5px solid white;
+    border-radius: 50%;
+    position: absolute;
+    top: 98px;
+    transform: rotate(45deg);
+    z-index: 2;
+    animation: gradientRotate 1s 3 alternate;
+}
+
+@keyframes gradientRotate{
+    from{transform: rotate(360deg);}
+    to{transform: rotate(30deg);}
+}
+@-webkit-keyframes gradientRotate {
+    from{transform: rotate(360deg);}
+    to{transform: rotate(30deg);}
+}
+@-moz-keyframes gradientRotate {
+    from{transform: rotate(360deg);}
+    to{transform: rotate(30deg);}
+}
+@-o-keyframes gradientRotate {
+    from{transform: rotate(360deg);}
+    to{transform: rotate(30deg);}
+}
+
+.test_final_pie{
+    width: 140px;
+    height: 140px;
+    background-color: white;
+    border-radius: 50%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin: 36px;
+    z-index: 3;
+}
+
+
+
+.test_final_pie .test_final_pie_percent{
+    color: rgb(26,216,211);
+    font-size: 24px;
+}
+
+.test_final_link{
+    text-decoration: none;
+}
+
+.test_final_link .test_final_result{
+    background-color: white;
+    width: 150px;
+    text-align: center;
+    color: rgb(26,216,211);
+    border-radius: 8px;
+    cursor: pointer;
+    line-height: 32px;
+    font-size: 18px;
+    margin: 24px auto;
+    padding: 8px 23px 8px 23px;
+}
+
+.test_final_link .test_final_result:hover{
+    color: white;
+    background-color: rgba(255,255,255,.5);
+}
+
+
+.test_layout .test_container .test_card .test_start_btn{
     width: 100px;
     height: 40px;
     color: rgb(26,216,211);

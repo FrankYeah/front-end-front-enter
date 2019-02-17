@@ -1,12 +1,6 @@
-var requestURL = "https://front-enter.firebaseio.com/list.json";
-var request = new XMLHttpRequest();
-request.open("GET",requestURL,true);
-//request.responseType = "json";
-request.send();
-
 request.onload = function(){
     
-    getData = JSON.parse(request.response);gi
+    getData = JSON.parse(request.response);
     
     
     slideImg(getData);
@@ -19,7 +13,9 @@ request.onload = function(){
     }
 }
 
-/* 將搜尋到的article放到filterData */
+
+
+/* 將搜尋到的article放    到filterData */
 function searchArticle(){
 //    removeArticle(getData);
     app.createElement("div","","article","articleSection","","");
@@ -56,7 +52,7 @@ function getIniData(){
         app.createElement("div","article_img_container","articleImgContainer" + i,"articleContent" + i,"","");
         getArticleImg(getData);
         app.createElement("p","article_title","articleArticle" + i,"articleContent" + i,getData[i]["name"],"");
-        app.createElement("p","article_detail","","articleContent" + i,getData[i]["preface"],"");
+        app.createElement("p","article_detail","articleDetail","articleContent" + i,getData[i]["preface"],"");
         app.createElement("div","read_more","readMore" + i,"articleContent" + i,"","");
         app.createElement("div","read_more_word","","readMore" + i,"read more","");
         app.createElement("div","read_more_icon","","readMore" + i,"","");
@@ -77,13 +73,14 @@ function getFilterData(filterData){
         getArticleContent(filterData);
         app.createElement("div","article_img_container","articleImgContainer" + i,"articleContent" + i,"","");
         getArticleImg(filterData);
-        app.createElement("p","article_title","articleArticle" + i,"articleContent" + i,getData[i]["name"],"");
-        app.createElement("p","article_detail","","articleContent" + i,getData[i]["preface"],"");
+        getArticleTitle(filterData);
+        getArticleDetail(filterData);
         app.createElement("div","read_more","readMore" + i,"articleContent" + i,"","");
         app.createElement("div","read_more_word","","readMore" + i,"read more","");
         app.createElement("div","read_more_icon","","readMore" + i,"","");
         app.createElement("div","tag_line","","article" + i,"","");
     }
+    console.log(filterData);
 }
 
 // filter by type
@@ -134,12 +131,20 @@ function filterLocation(e){
     getFilterData(filterData);
 }
 
-
 // create Article part 
     /* remove article */
     function removeArticle(getData){
-        var removeArticle = app.get("#article");
         article.parentNode.removeChild(article);
+//        app.createElement("p","article_title","articleArticle" + i,"articleContent" + i,getData[i]["name"],"");
+    }
+
+    /* createArticleTitle */
+    function getArticleTitle(getData){
+        app.createElement("p","article_title","articleArticle" + i,"articleContent" + i,getData[i]["name"],"");
+    }
+
+    function getArticleDetail(getData){
+        app.createElement("p","article_detail","articleDetail","articleContent" + i,getData[i]["preface"],"");
     }
 
     /* createALocation */
@@ -167,56 +172,35 @@ function filterLocation(e){
         app.get("#articleImg" + i).setAttribute("src",getData[i]["squareUrl"]);
     }
 
-
 // image slide function */
 function slideImg(articleIndex){
-    document.getElementById("slideImg1").style.background = "url('" + articleIndex[1]["rectangleUrl"]+ "') 50% / cover no-repeat";
-    document.getElementById("slideImg1").style.display = "block";
-    document.getElementById("slideImg1").style.height = "380px";
+    app.slideKey("#slideImg1","#slideImg2","#slideImg3");
+    app.get("#slideImg1").style.background = "url('" + articleIndex[1]["rectangleUrl"]+ "') 50% / cover no-repeat";
+    app.get("#slideImg1").style.height = "380px";
     
-    document.getElementById("slideImg2").style.background = "url('" + articleIndex[2]["rectangleUrl"]+ "') 50% / cover no-repeat";
-    document.getElementById("slideImg2").style.display = "none";
-    document.getElementById("slideImg2").style.height = "380px";
+    app.get("#slideImg2").style.background = "url('" + articleIndex[2]["rectangleUrl"]+ "') 50% / cover no-repeat";
+    app.get("#slideImg2").style.height = "380px";
     
-    document.getElementById("slideImg3").style.background = "url('" + articleIndex[3]["rectangleUrl"]+ "') 50% / cover no-repeat";
-    document.getElementById("slideImg3").style.display = "none";
-    document.getElementById("slideImg3").style.height = "380px";
-    
+    app.get("#slideImg3").style.background = "url('" + articleIndex[3]["rectangleUrl"]+ "') 50% / cover no-repeat";
+    app.get("#slideImg3").style.height = "380px";
     setInterval("slideAction()",5000);
 }
-let slideCount = 1;
+
+app.slideKey = (keyBlock, keyNone1, keyNone2) =>{
+    app.get(keyBlock).style.display = "block";
+    app.get(keyNone1).style.display = "none";
+    app.get(keyNone2).style.display = "none";
+    app.get(keyBlock).style.animation = "slideOpacityOut 5s ease 0s 1 alternate both";
+}
+
+let slideCount = 2;
 slideAction = function(){
-        
-    if(slideCount==1){
-        document.getElementById("slideImg1").style.display = "none";
-        document.getElementById("slideImg1").style.height = "380px";
-        document.getElementById("slideImg1").style.animation ="slideOpacityOut 5s ease 0s 1 alternate both" ;
-        document.getElementById("slideImg2").style.display = "block";
-        document.getElementById("slideImg2").style.height = "380px";
-        document.getElementById("slideImg2").style.animation ="slideOpacityOut 5s ease 0s 1 alternate both" ;
-        document.getElementById("slideImg3").style.display = "none";
-        document.getElementById("slideImg3").style.height = "380px";
-        document.getElementById("slideImg3").style.animation ="slideOpacityOut 5s ease 0s 1 alternate both" ;
+    if(slideCount == 1){
+        app.slideKey("#slideImg1","#slideImg2","#slideImg3");
     }else if(slideCount == 2){
-        document.getElementById("slideImg1").style.display = "none";
-        document.getElementById("slideImg1").style.height = "380px";
-        document.getElementById("slideImg1").style.animation ="slideOpacityOut 5s ease 0s 1 alternate both" ;
-        document.getElementById("slideImg2").style.display = "none";
-        document.getElementById("slideImg2").style.height = "380px";
-        document.getElementById("slideImg2").style.animation ="slideOpacityOut 5s ease 0s 1 alternate both" ;
-        document.getElementById("slideImg3").style.display = "block";
-        document.getElementById("slideImg3").style.height = "380px";
-        document.getElementById("slideImg3").style.animation ="slideOpacityOut 5s ease 0s 1 alternate both" ;
+        app.slideKey("#slideImg2", "#slideImg3", "#slideImg1");
     }else if(slideCount == 3){
-        document.getElementById("slideImg1").style.display = "block";
-        document.getElementById("slideImg1").style.height = "380px";
-        document.getElementById("slideImg1").style.animation ="slideOpacityOut 5s ease 0s 1 alternate both" ;
-        document.getElementById("slideImg2").style.display = "none";
-        document.getElementById("slideImg2").style.height = "380px";
-        document.getElementById("slideImg2").style.animation ="slideOpacityOut 5s ease 0s 1 alternate both" ;
-        document.getElementById("slideImg3").style.display = "none";
-        document.getElementById("slideImg3").style.height = "380px";
-        document.getElementById("slideImg3").style.animation ="slideOpacityOut 5s ease 0s 1 alternate both" ;
+        app.slideKey("#slideImg3", "#slideImg1", "#slideImg2");
     }
     
     slideCount++;
