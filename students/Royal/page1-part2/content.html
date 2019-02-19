@@ -4,16 +4,15 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <title>Royal 文章列表</title>
+        <title>Royal 文章內容</title>
         <link rel="icon" type="image/png" href="images/favicon.ico">
         
         
         <link rel="stylesheet" type="text/css" href="css/grid.css">
         <link rel="stylesheet" type="text/css" href="css/common.css">
-        <link rel="stylesheet" type="text/css" href="css/article.css">
+        <link rel="stylesheet" type="text/css" href="css/content.css">
         <link rel="stylesheet" type="text/css" href="css/loading.css">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
-        
         
 
     </head>
@@ -62,44 +61,69 @@
                     </form>
                 </div>
                 <div class="fullSearch" onclick="fullSearchClick()"></div>
-            </div>   
-            <!-- slide poster -->
-            <section class="slidePoster_section">
-                <div class="slide_img" id="slideImg1">
-                    <div class="slide_title_container">
-                        <p class="slide_title">蒐羅前端學校</p>
-                    </div>
-                </div>
-                <div class="slide_img" id="slideImg2">
-                    <div class="slide_title_container">
-                        <p class="slide_title">蒐羅前端學校</p>
-                    </div>
-                </div>
-                <div class="slide_img" id="slideImg3">
-                    <div class="slide_title_container">
-                        <p class="slide_title">蒐羅前端學校</p>
-                    </div>
+            </div>
+            <!-- poster -->
+            <section class="poster_section">
+                <div class="poster" id="poster">
+                    <p class="poster_title" id="posterTitle"></p>
                 </div>
             </section>
-            <!-- tag box -->
-            <section class="tagBox_section">
-                <div class="container">
-                    <div class="row">
-                        <div class="tag_box">
-                            <div></div>
-                            <div></div>
-                            <div id="getAllArticle" class="tag_title" onclick="getAllArticle()">全部</div>
-                            <div id="smallClass" class="tag_title" onclick="smallClass()">小班制</div>
-                            <div id="letItGo" class="tag_title" onclick="letItGo()">放養制</div>
-                            <div id="oneByOne" class="tag_title" onclick="oneByone()">一對一</div>
-                            <div></div>
-                            <div></div>
+            <!-- content -->
+            <section class="content_section" id="contentSection">
+                <div class="content_chart_container" id="contentChartContainer">
+                    <div class="content_chart chart01" id="contentChart0"></div>
+                    <div class="content_chart chart02" id="contentChart1"></div>
+                    <div class="content_chart chart03" id="contentChart2"></div>
+                    <div class="content_chart chart04" id="contentChart3"></div>
+                    <div class="content_chart chart05" id="contentChart4"></div>
+                </div>
+                <div class="content_content" id="contentContent">
+                    <p class="content_title" id="contentTitle"></p>
+                    <p class="content_text" id="contentText"></p>
+                    <p class="box_title" id="boxTitle">整理</p>
+                    <div class="box_title_underline"></div>
+                    <div class="box_table" id="boxTable">
+                        <div class="box_row" id="boxRowCity">
+                            <p class="box_row_title">城市</p>
+                            <p class="box_index" id="boxCity"></p>
+                        </div>
+                        <div class="box_row" id="boxRowClassType">
+                            <p class="box_row_title">班制</p>
+                            <p class="box_index" id="boxClassType"></p>
+                        </div>
+                        <div class="box_row" id="boxRowTeachWay">
+                            <p class="box_row_title">教法</p>
+                            <p class="box_index" id="boxTeachWay"></p>
+                        </div>
+                        <div class="box_row" id="boxRowTotalDay">
+                            <p class="box_row_title">天數</p>
+                            <p class="box_index" id="boxTotalDay"></p>
+                        </div>
+                        <div class="box_row" id="boxRowWeekHour">
+                            <p class="box_row_title">週時</p>
+                            <p class="box_index" id="boxWeekHour"></p>
+                        </div>
+                        <div class="box_row" id="boxRowTechnology">
+                            <p class="box_row_title">技術</p>
+                            <p class="box_index" id="boxTechnology"></p>
+                        </div>
+                        <div class="box_row" id="boxRowMail">
+                            <p class="box_row_title">信箱</p>
+                            <p class="box_index" id="boxMail"></p>
+                        </div>
+                        <div class="box_row" id="boxRowPhone">
+                            <p class="box_row_title">電話</p>
+                            <p class="box_index" id="boxPhone"></p>
                         </div>
                     </div>
                 </div>
             </section>
-            <section id="articleSection">
-            </section>
+            <!-- full slide section -->
+            <div class="full_slide_back" id="fullSlideback">
+                <div class="full_slide_left" id="fullSlideLeft" onclick="fullSlideLeft()"></div>
+                <div class="full_slide_img" id="fullSlideImg"></div>
+                <div class="full_slide_right" id="fullSlideRight" onclick="fullSlideRight()"></div>
+            </div>
             <!--top-->
             <section>
                 <div class="container">
@@ -152,10 +176,7 @@
         </footer>
         <script src="js/lib.js"></script>
         <script src="js/common.js"></script>
-        <script src="js/article.js"></script>
-        
-        
-        
+        <script src="js/content.js"></script>
         
     </body>
 </html>
