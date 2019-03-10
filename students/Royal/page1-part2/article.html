@@ -12,9 +12,11 @@
         <link rel="stylesheet" type="text/css" href="css/common.css">
         <link rel="stylesheet" type="text/css" href="css/article.css">
         <link rel="stylesheet" type="text/css" href="css/loading.css">
+        <link rel="stylesheet" type="text/css" href="css/login.css">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
         
-        
+        <script src="https://www.gstatic.com/firebasejs/5.8.4/firebase.js"></script>
+        <script src="js/firebase.js"></script>
 
     </head>
     <body id="body">
@@ -28,14 +30,17 @@
                     </div>
                 </div>
                 <div class="col-phone-75 col-tablet-50">
-                    <div class="nav_content_container">
+                    <div class="nav_content_container" id="navContentContainer">
                         <a class="nav_link" href="./article.html">
                             <span class="nav_content" >探索</span>
                         </a>
                         <a class="nav_link" href="./article.html">
                             <span class="nav_content">技能樹</span>
                         </a>
-                        <span class="nav_content">登入</span>
+                        <span class="nav_content" id="navLoginBtn">登入</span>
+                        <a class="nav_link member" id="navMemberLink" href="./member.html">
+                            <span class="nav_content" id="navMember">會員</span>
+                        </a>
                         <a class="nav_search">
                             <img class="nav_search_icon" src="images/nav_search.png" onclick="search()">
                         </a>    
@@ -153,9 +158,6 @@
         <script src="js/lib.js"></script>
         <script src="js/common.js"></script>
         <script src="js/article.js"></script>
-        
-        
-        
-        
+        <script src="js/login.js"></script>
     </body>
 </html>

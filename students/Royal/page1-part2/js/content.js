@@ -1,9 +1,18 @@
-request.onload = function(){
-    
-    getData = JSON.parse(request.response);
+//request.onload = function(){
+//    
+//    getData = JSON.parse(request.response);
+//    getPoster();
+//    getContent();
+//}
+
+var firebaseData;
+firebaseData = database.ref('getData')
+var getData;
+firebaseData.on('value', function(snapshot) {
+    getData = snapshot.val();
     getPoster();
     getContent();
-}
+});
 
 /* get this article through creatTime */
 var thisData =[];
