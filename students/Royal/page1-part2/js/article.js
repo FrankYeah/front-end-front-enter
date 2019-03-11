@@ -1,23 +1,22 @@
-request.onload = function(){
-    
-    getData = JSON.parse(request.response);
-    
-    
+var getData;
+var firebaseMember;
+var getMember;
+var memberData;
+var memberUid;
+var userLogin;
+
+var firebaseData = database.ref('getData')
+firebaseData.on('value', function(snapshot) {
+    getData = snapshot.val();
+    getIniData()
     slideImg(getData);
-    
-    searchIndex = new URL(document.location).searchParams.get("id");
-    if(searchIndex != null){
-        searchArticle();
-    }else{
-        getIniData();
-    }
-}
+    setArticleMark()
+    checkCollectionMark()
 
-
+});
 
 /* 將搜尋到的article放    到filterData */
 function searchArticle(){
-//    removeArticle(getData);
     app.createElement("div","","article","articleSection","","");
     filterData = [];
     for(i = 0; i <= getData.length; i++){
@@ -38,18 +37,23 @@ function searchArticle(){
     }
 }
 
-
 //get initial data
 function getIniData(){
     app.createElement("div","","article","articleSection","","");
     for(i = 0; i < getData.length; i++ ){
         app.createElement("div","article_card","article" + i,"article","","");
-        app.createElement("div","","locationContainer" + i,"article" + i,"","");
+        app.createElement("div","collection_mark","collectionMark" + i,"article" + i,"","");
+        app.get("#collectionMark" + i).onclick = function(){
+          collectionMarkClick(this)
+        }
+        app.get("#collectionMark" + i).setAttribute("data-mark",i) ;     
+        app.createElement("div","location_container","locationContainer" + i,"article" + i,"","");
         app.createElement("div","location_img","locationImg","locationContainer" + i,"","");
         getALocation(getData);
         getArticleLocation(getData);
         getArticleContent(getData);
         app.createElement("div","article_img_container","articleImgContainer" + i,"articleContent" + i,"","");
+        
         getArticleImg(getData);
         app.createElement("p","article_title","articleArticle" + i,"articleContent" + i,getData[i]["name"],"");
         app.createElement("p","article_detail","articleDetail","articleContent" + i,getData[i]["preface"],"");
@@ -66,6 +70,7 @@ function getFilterData(filterData){
     app.createElement("div","","article","articleSection","","");
     for(i = 0; i < filterData.length; i++ ){
         app.createElement("div","article_card","article" + i,"article","","");
+        app.createElement("div","collection_mark","collectionMark" + i,"article" + i,"","");
         app.createElement("div","","locationContainer" + i,"article" + i,"","");
         app.createElement("div","location_img","locationImg","locationContainer" + i,"","");
         getALocation(filterData);
@@ -80,7 +85,6 @@ function getFilterData(filterData){
         app.createElement("div","read_more_icon","","readMore" + i,"","");
         app.createElement("div","tag_line","","article" + i,"","");
     }
-    console.log(filterData);
 }
 
 // filter by type
@@ -135,7 +139,6 @@ function filterLocation(e){
     /* remove article */
     function removeArticle(getData){
         article.parentNode.removeChild(article);
-//        app.createElement("p","article_title","articleArticle" + i,"articleContent" + i,getData[i]["name"],"");
     }
 
     /* createArticleTitle */
@@ -206,5 +209,99 @@ slideAction = function(){
     slideCount++;
     if(slideCount > 3){slideCount = 1}; 
 }
+
+/* article mark */
+    var storageRef = storage.ref();
+    var markedArticleRef = storageRef.child('markedArticle');
+
+    console.log("storageRef = " + storageRef);
+    console.log("markedArticleRef = " + markedArticleRef);
+    var collectionMarkedUrl = "star-background.svg";
+    var collectionUnmarkedUrl = "star-border.svg";
+    function collectionMarkClick(e){
+        var markNo = e.getAttribute("data-mark");
+        var markUrl = getComputedStyle(e).background;
+        markUrl = markUrl.split(" ")[4].split("/")[4].split('"')[0]
+        if(markUrl == collectionMarkedUrl){
+            e.style.background = "url('../images/" + collectionUnmarkedUrl + "') 50% / cover no-repeat";
+        }else{
+            e.style.background = "url('../images/" + collectionMarkedUrl + "') 50% / cover no-repeat";
+        }
+
+        firebase.auth().onAuthStateChanged(function(user){
+        userLogin = firebase.auth().currentUser;
+        memberData = user;
+        memberUid = memberData.uid;
+
+        firebaseMember = database.ref('member/' + memberUid)
+             if(markUrl == collectionUnmarkedUrl){
+                 database.ref("member/" + memberUid + "/collectionMarked/" + markNo).update({
+                     marked: markNo,
+                     name: getData[markNo]["name"],
+                     squareUrl: getData[markNo]["squareUrl"],
+                     creatTime: getData[markNo]["creatTime"],
+                 })
+             }else{
+                 database.ref("member/" + memberUid + "/collectionMarked/" + markNo).remove()
+             }
+        })
+    }
+
+
+    /* change article mark */
+    firebase.auth().onAuthStateChanged(function(user){
+        if(user){
+            memberData = user;
+            memberUid = memberData.uid;
+            var markedArticle =  database.ref('member/' + memberUid + "/collectionMarked/")
+            markedArticle.once('value', function(snapshot) {
+                var markedArticle = snapshot.val();
+                if(markedArticle){
+                    for(i = 0; i < getData.length; i++){
+                       if(!markedArticle[i]){
+                           app.get("#collectionMark" + i).style.background = "url('../images/" + collectionUnmarkedUrl + "') 50% / cover no-repeat";
+                       }else{
+                           app.get("#collectionMark" + i).style.background = "url('../images/" + collectionMarkedUrl + "') 50% / cover no-repeat";
+                       }
+                    }
+                }
+            })  
+            
+        }
+        
+    })
+
+    /* set initial article marked */
+    function setArticleMark(){
+        firebase.auth().onAuthStateChanged(function(user){
+            if(user){
+                memberData = user;
+                memberUid = memberData.uid;
+                var memberData =  database.ref('member/' + memberUid + "/collectionMarked/")
+                memberData.once('value', function(snapshot) {
+                    var markedArticle = snapshot.val();
+                    for(i = 0; getData.length < 9; i++){
+                        if(!markedArticle[i]){
+                            app.get("#collectionMark" + i).style.background = "url('../images/" + collectionUnmarkedUrl + "') 50% / cover no-repeat";
+                        }else{
+                            app.get("#collectionMark" + i).style.background = "url('../images/" + collectionMarkedUrl + "') 50% / cover no-repeat";
+                        }
+                    }
+                }) 
+            }
+        })
+    }
+
+    /* if not login, make mark display none */
+    function checkCollectionMark(){
+        firebase.auth().onAuthStateChanged(function(user){
+            if(!user){
+               for(i = 0; i < getData.length; i++){
+                   app.get("#collectionMark" + i).style.display = "none";
+
+               }
+            }
+        });
+    }
 
 

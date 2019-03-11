@@ -1,0 +1,341 @@
+/* member poster */
+.member_poster{
+/*    width: 100%;*/
+    height: 380px;
+    background: url("../images/member_poster.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 10px;
+    top: 90px;
+    position: relative;
+    background-position: center;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.member_poster .member_title{
+    color: white;
+    font-size: 24px;
+    width: 136px;
+    height: 32px;
+    background-color: rgba(128,128,128,0.7);
+    text-align: center;
+    border-radius: 6px;
+    letter-spacing: 10px;
+    padding: 6px 6px 6px 13px;
+}
+
+/* member layout */
+.member_layout{
+/*    width: 100%;*/
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    padding: 60px 40px;
+}
+
+.member_layout p{
+    margin: 0;
+}
+
+/* left btn */
+.member_layout .member_bar{
+    width: 200px;
+    height: 600px;
+    display: flex;
+    flex-direction: column;;
+    justify-content: center;
+    letter-spacing: 3px;
+    
+}
+
+.member_layout .member_bar .member_side_btn{
+    font-size: 16px;
+    color: white;
+    background-color: rgb(26, 216, 211);
+    width: 80px;
+    height: 16px;
+    line-height: 16px;
+    margin: 16px 0;
+    padding: 10px;
+    border-radius: 6px;
+    text-align: center;
+    cursor: pointer;
+}
+
+/* right display */
+.member_layout .member_display{
+    width: 600px;
+/*    display: flex;*/
+    flex-direction: column;;
+    align-items: center;
+}
+
+
+
+    /* member profile display */
+        .member_profile{
+/*            display: flex;*/
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            letter-spacing: 3px;
+        }
+
+         .member_layout .member_display .member_photo{
+            width: 120px;
+            height: 120px;
+            color: white;
+            background: url("../images/profile_photo.svg");
+            background-size: cover;
+            background-color: white;
+            border-radius: 50%;
+        }
+
+        .member_layout .member_display .profile_info{
+            margin: 24px;
+        }
+
+        .member_layout .member_display .profile_info .profile_row{
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            margin: 24px;
+            font-size: 16px;
+        }
+
+        .member_layout .member_display .profile_info .profile_row .profile_title{
+            width: 64px;
+            color: rgb(158, 158, 158);
+        }
+
+        .member_layout .member_display .profile_info .profile_row .profile_index{
+            color: rgb(128, 128, 128);
+            background-color: white;
+            border: none;
+            font-size: 16px;    
+            letter-spacing: 2px;
+            width: 300px;
+            padding: 6px ;
+        }
+
+        .modify_profile_btn_container{
+            width: 400px;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            
+/*            margin: 0 auto;*/
+        }
+
+        .modify_profile_btn_container .modify_profile_btn{
+            font-size: 16px;
+            color: white;
+            background-color: rgb(26, 216, 211);
+            width: 80px;
+            height: 16px;
+            line-height: 16px;
+            margin: 16px;
+            padding: 10px;
+            border-radius: 6px;
+            text-align: center;
+            display: none;
+        }
+
+        .modify_profile_btn_container .modify_profile_btn.modify{
+            display: block;
+        }
+
+        .modify_profile_btn:hover{
+            cursor: pointer;
+        }
+
+
+
+    /* member collection */
+        .member_display .member_collection{
+/*            width: 600px;*/
+/*            display: flex;*/
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            align-items: flex-start;
+            position: relative;
+            
+        }
+
+        .member_display .member_collection .collection_card{
+            width: 180px;
+            height: 240px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            align-items: center;
+            margin: 16px 0;
+        }
+
+        .member_display .member_collection .collection_card .collection_img{
+            width: 160px;
+            height: 160px;
+/*            background: url("../images/article0.jpg") 0% 0%/ cover;*/
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.6s;
+            margin: 0 auto;
+            max-width: 100%;
+            max-height: 100%;
+        }
+
+        .member_display .member_collection .collection_card .collection_img:hover{
+            transform: scale(1.12);
+        }
+
+        .member_display .member_collection .collection_card .collection_title{
+            color: rgb(26,216,211);
+            text-align: center;
+            font-size: 16px;
+            line-height: 20px;
+            margin: 8px;
+        }
+
+        .member_display .member_collection .collection_card .collection_delete{
+            width: 20px;
+            height: 20px;
+            background: url("../images/collection_delete.svg");
+            background-size: cover;
+            cursor: pointer;
+            margin: 0 auto;
+        }
+
+        .collection_index{
+            color: rgb(26, 216, 211);
+        }
+
+    /* member post manage */
+        .member_post_manage{
+/*            width: 600px;*/
+/*            display: flex;*/
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .member_post_container{
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .member_post_manage .member_post_container .post_container{
+            width: 200px;
+            height: 16px;
+            border: 1px solid rgb(128, 128, 128);
+            text-align: center;
+            margin: 10px;
+            padding: 10px;
+            line-height: 16px;
+            border-radius: 6px;
+            color: rgb(128, 128, 128);
+        }
+
+        .member_post_manage .member_post_container .post_container .post_title{
+
+        }
+
+        .member_post_manage .post_btn_container{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+/*                            align-items: center;*/
+            border-top: 1px solid rgba(230, 230, 230, 0.7);
+            width: 500px;
+            margin-top: 30px;
+            padding-top: 30px;
+        }
+
+        .member_post_manage .post_btn_container .post_btn{
+            font-size: 16px;
+            color: white;
+            background-color: rgb(26, 216, 211);
+            width: 80px;
+            height: 16px;
+            line-height: 16px;
+            padding: 10px;
+            border-radius: 6px;
+            line-height: 16px;
+            text-align: center;
+            cursor: pointer;
+            letter-spacing: 3px;
+        }
+        
+        /* RWD */
+        @media(max-width: 879px){
+            .member_layout{
+                flex-direction: column-reverse;   
+            }
+            
+            .member_layout .member_bar{
+                flex-direction: row;
+                width: 420px;
+                height: 50px;
+                justify-content: space-between;
+                border-top: 1px solid rgba(230, 230, 230, 0.7);
+                padding-top: 30px;
+                margin-top: 40px;
+            }
+            
+            .member_layout .member_display .profile_info .profile_row .profile_index{
+                font-size: 12px;
+                width: 100%;
+            }
+        }
+
+        @media(max-width: 630px){
+            .member_layout .member_bar{
+                flex-direction: column;
+                width: 250px;
+                height: 150px;
+                align-items: center;
+            }
+            
+            .member_layout .member_bar .member_side_btn{
+                font-size: 14px;
+                line-height: 14px;
+                margin: 14px 0;
+            }
+            
+            .member_layout .member_display{
+                width: 250px;
+            }
+            
+            .member_display .member_collection{
+                width: 250px;
+/*                display: flex;*/
+                flex-direction: column;
+/*                flex-wrap: wrap;*/
+/*                justify-content: space-around;*/
+                align-items: center;
+            }
+            
+            .member_post_manage{
+                width: 300px;
+            }
+            .member_layout .member_display .profile_info .profile_row .profile_index{
+                font-size: 12px;
+                width: 100%;
+            }
+            .member_post_manage .post_btn_container{
+                width: 100px;
+            }
+            
+            .modify_profile_btn_container{
+               width: 200px;
+            }
+        }

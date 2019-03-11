@@ -267,8 +267,8 @@ setTimeout("loadingPage()", 900);
         app.createElement("div","test_card","testCardFinal","testContainer","","");
         app.createElement("p","test_question_title","testQuestionTitle","testCardFinal","你有多適合下列學校?","");
         app.createElement("div","test_final_pie","testFinalPie","testCardFinal","","");
-        app.createElement("p","test_final_pie_gradient","testFinalPieGradient","testCardFinal","" ,"");
-        app.createElement("p","test_final_pie_border","testFinalPieBorder","testCardFinal","" ,"");
+//        app.createElement("p","test_final_pie_gradient","testFinalPieGradient","testCardFinal","" ,"");
+        app.createElement("div","test_final_pie_border","testFinalPieBorder","testCardFinal","" ,"");
         getSelectedOption.push(e.target.textContent);
         getMatchData();
         getResultMatch(); 
@@ -348,6 +348,8 @@ setTimeout("loadingPage()", 900);
         },3000);
     }
 
+
+
 /* back to top */
 let timer = null;
 function backToTop(){ 
@@ -359,6 +361,7 @@ function backToTop(){
             clearInterval(timer);
         }
     }, 30);
+    
 }
 
 

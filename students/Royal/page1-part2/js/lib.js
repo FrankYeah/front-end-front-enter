@@ -1,5 +1,7 @@
 let app ={
-    card:{}
+    card:{},
+    log:{},
+    member:{}
 };
 app.get = function (selector){
     return document.querySelector(selector);

@@ -4,12 +4,12 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <title>Royal Front-Enter</title>
+        <title>Royal Member</title>
         <link rel="icon" type="image/png" href="images/favicon.ico">
         
         <link rel="stylesheet" type="text/css" href="css/grid.css">
         <link rel="stylesheet" type="text/css" href="css/common.css">
-        <link rel="stylesheet" type="text/css" href="css/home.css">
+        <link rel="stylesheet" type="text/css" href="css/member.css">
         <link rel="stylesheet" type="text/css" href="css/loading.css">
         <link rel="stylesheet" type="text/css" href="css/login.css">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
@@ -36,7 +36,7 @@
                             <span class="nav_content">技能樹</span>
                         </a>
                         <span class="nav_content" id="navLoginBtn">登入</span>
-                        <a class="nav_link member" id="navMemberLink" href="./member.html">
+                         <a class="nav_link member" id="navMemberLink" href="./member.html">
                             <span class="nav_content" id="navMember">會員</span>
                         </a>
                         <a class="nav_search">
@@ -45,7 +45,6 @@
                     </div>
                 </div>
             </nav>
-            
         </header>
         <main id="main">
             <!-- loading page -->
@@ -66,113 +65,112 @@
                 </div>
                 <div class="fullSearch" onclick="fullSearchClick()"></div>
             </div>
-            <!--information-->
-            <section>
-                <div class="container">
-                    <div class="row">
-                        <div class="col-phone-100">
-                            <div class="infomation">
-                                <div class="information_content">
-                                    <p class="infoTitle">FRONT-ENTER</p>
-                                    <p class="infoDetail">前端轉職資訊</p>
-                                </div>
-                                <div class="_next"></div>
-                            </div>                            
-                        </div>
-                    </div>
+  
+            <!-- member poster -->
+            <div class="member_poster">
+                <p class="member_title">會員中心</p>
+            </div>
+            
+            <section id="memberSection">
+            <!-- member profile -->
+<!--
+            <div class="member_layout" id="memberLayout">
+                
+                <div class="member_bar" id="memberBar">
+                    <p class="member_side_btn" id="personalData">個人資料</p>
+                    <p class="member_side_btn" id="myCollection">收藏</p>
+                    <p class="member_side_btn" id="managePost">貼文管理</p>
+                    <p class="member_side_btn" id="logOut">登出</p>
                 </div>
-            </section>
-            <!--test-->
-            <section>
-                <div class="container">
-                    <div class="row">
-                        <div class="col-phone-100">
-                            <div class="test">
-                                <p class="test_detail">想知道自己適合什麼學習環境嗎?</p>
-                                <p class="test_detail">可以點擊按鈕測測看哦?</p>
-                                <p class="test_btn">測驗 GO?</p>
+-->
+                
+<!--
+                <div class="member_display" id="memberDisplay">
+                    <div class="member_profile" id="memberProfile">
+                        <div class="member_photo" id="memberPhoto"></div>
+                        <div class="profile_info" id="profileInfo">
+                            <div class="profile_row" id="profileRow">
+                                <p class="profile_title" id="profileTitle">姓名</p>
+                                <p class="profile_index" id="profileName">Royal</p>
+                            </div>
+                            <div class="profile_row">
+                                <p class="profile_title" id="profileTitle">手機</p>
+                                <p class="profile_index" id="profilePhone">0911-111-111</p>
+                            </div>
+                            <div class="profile_row">
+                                <p class="profile_title" id="profileTitle">信箱</p>
+                                <p class="profile_index" id="profileEmail">zzz123@yahoo.com.tw</p>
                             </div>
                         </div>
+                        <p class="modify_profile_btn" id="modifyProfileBtn">修改資料</p>
                     </div>
                 </div>
-            </section>
-            <!--course-->
-            <section>
-                <div class="container">
-                    <div class="row">
-                        <div class="col-phone-100">
-                            <div class="course">
-                                <p class="course_title">教室精選</p>
-                                <p class="course_btn">
-                                    <a href="">AppWorks School</a>
-                                </p>
-                                <p class="course_btn">
-                                    <a href="">彭彭的課程教學</a>
-                                </p>
-                                <p class="course_btn">
-                                    <a href="">五倍紅寶石</a>
-                                </p>
-                            </div>
+-->
+                                                                           
+<!--
+                    <div class="member_collection" id="memberCollection">
+                        <div class="collection_card" id="collectionCard">
+                            <div class="collection_img" id="collectionImg"></div>
+                            <div class="collection_title" id="collectionTitle">彭彭的課程教學></div>
+                            <div class="collection_delete" id="collectionDelete"></div>
+                        </div>
+                        <div class="collection_card">
+                            <div class="collection_img" id="collection_img"></div>
+                            <div class="collection_title">彭彭的課程教學</div>
+                            <div class="collection_delete"></div>
+                        </div>
+                        <div class="collection_card">
+                            <div class="collection_img" id="collection_img"></div>
+                            <div class="collection_title">彭彭的課程教學</div>
+                            <div class="collection_delete"></div>
+                        </div>
+                        <div class="collection_card">
+                            <div class="collection_img" id="collection_img"></div>
+                            <div class="collection_title">彭彭的課程教學</div>
+                            <div class="collection_delete"></div>
                         </div>
                     </div>
-                </div>
-            </section>
-            <!--search-->
-            <section>
-                <div class="container">
-                    <div class="row">
-                        <div class="col-phone-100">
-                            <div class="search">
-                                <div class="search_card">
-                                    <dic class="search_card_container">
-                                    <img class="search_card_icon" src="images/FE_pen.png">
-                                        <p class="search_card_content title">探索</p>
-                                        <div class="_line"></div>
-                                        <p class="search_card_content detail">
-                                            我們提供公正的資訊<br>
-                                            幫您順利轉職     <br>
-                                            並追蹤最新的業界動態
-                                        </p>
-                                        <p class="search_card_content btn">
-                                            <a href="">找學校</a>
-                                        </p>                                    
-                                    </dic>
-
-                                </div>
-                                <div class="search_card">
-                                    <div class="search_card_container">
-                                        <img class="search_card_icon" src="images/FE_pen.png">
-                                        <p class="search_card_content title">技能樹</p>
-                                        <div class="_line"></div>
-                                        <p class="search_card_content detail">
-                                            我們提供公正的資訊<br>
-                                            幫您順利轉職     <br>
-                                            並追蹤最新的業界動態
-                                        </p>
-                                        <p class="search_card_content btn">
-                                            <a href="">技能樹</a>
-                                        </p>
-                                    </div>
-                                </div>
+-->
+<!--
+                    <div class="member_post_manage" id="memberPostManage">
+                        <div class="member_post_container" id="memberPostContainer">
+                            <div class="post_container" id="postContainer">
+                                <p class="post_title" id="postTitle">彭彭的課程教學</p>
+                            </div>
+                            <div class="post_container" id="postContainer">
+                                <p class="post_title" id="postTitle">飛肯設計</p>
+                            </div>
+                            <div class="post_container" id="postContainer">
+                                <p class="post_title" id="postTitle">彭彭的課程教學</p>
+                            </div>
+                            <div class="post_container" id="postContainer">
+                                <p class="post_title" id="postTitle">彭彭的課程教學</p>
+                            </div>
+                            <div class="post_container" id="postContainer">
+                                <p class="post_title" id="postTitle">彭彭的課程教學</p>
+                            </div>
+                            <div class="post_container" id="postContainer">
+                                <p class="post_title" id="postTitle">彭彭的課程教學</p>
+                            </div>
+                            <div class="post_container" id="postContainer">
+                                <p class="post_title" id="postTitle">彭彭的課程教學</p>
+                            </div>
+                            <div class="post_container" id="postContainer">
+                                <p class="post_title" id="postTitle">彭彭的課程教學</p>
+                            </div>
+                            <div class="post_container" id="postContainer">
+                                <p class="post_title" id="postTitle">彭彭的課程教學</p>
                             </div>
                         </div>
-                    </div>
-                </div>
-            </section>
-             <!--about-->
-            <section>
-                <div class="container">
-                    <div class="row">
-                        <div class="col-phone-100">
-                            <div class="about">
-                                <p class="about_title">關於</p>
-                                <p class="_line"></p>
-                                <p class="about_detail">近年來，社會對於軟體工程師的需求急速增加，全台各地的補習也如雨後春筍般開業， 然而人的時間有限，要如何找到適合自己的學習環境？</p>
-                                <p class="about_detail margin_bottom">「Front-Enter」特別針對前端工程的學習資源，進行蒐集、分類， 期待讓有志成為前端工程師的人，找到最適合自己的學習環境。</p>
-                            </div>
+                        <div class="post_btn_container" id="postBtnContainer">
+                            <p class="post_btn" id="createPostBtn">發布貼文</p>
+                            <p class="post_btn" id="editPostBtn">編輯貼文</p>
                         </div>
+                        
                     </div>
-                </div>
+-->
+                
+<!--            </div>-->
             </section>
             <!--top-->
             <section>
@@ -223,11 +221,11 @@
                         </div>
                     </div>
                 </div>
-
-
         </footer>
         <script src="js/lib.js"></script>
         <script src="js/common.js"></script>
         <script src="js/login.js"></script>
+        <script src="js/member.js"></script>
+        
     </body>
 </html>

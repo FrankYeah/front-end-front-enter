@@ -7,8 +7,6 @@
     width: 100%;
 }
 
-
-
 .slide .slide_img{
     background-size: cover;
     width: 100%;
@@ -113,6 +111,16 @@
     margin: 10px;
 }
 
+#article .article_card .collection_mark{
+    width: 20px;
+    height: 20px;
+    background: url(../images/star-border.svg)50% / cover no-repeat;
+    cursor: pointer;
+    margin: 0;
+    margin-left: 90%;
+    display: block;
+}
+
 /* locationContainer + x */
 #article .article_card > div{
     display: flex;
@@ -132,6 +140,10 @@
 /* aLocation + x */
 #article .article_card > div > a{
     
+}
+
+.article_location{
+    margin: 8px auto;
 }
 
 #article .article_card > div > a > .article_location{

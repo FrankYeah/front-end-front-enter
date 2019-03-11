@@ -47,6 +47,10 @@ nav .nav_content_container .nav_link{
     
 }
 
+nav .nav_content_container .nav_link.member{
+    display: none;
+}
+
 nav .nav_content_container .nav_content{
     color: rgb(128, 128, 128);
     letter-spacing: 3px;
@@ -67,8 +71,7 @@ nav .nav_content_container .nav_search_icon{
 }
 
 nav .nav_content_container .nav_search_icon:hover{
-    width: 25px;
-    height: 25px;
+    transform: scale(1.4);
     cursor: pointer;
 }
 
@@ -110,7 +113,7 @@ nav .nav_content_container .nav_search_icon:hover{
     height: 69px;
     width: 78px;
     bottom: 20%;
-    right: 2%;
+    right: 0.5%;
     z-index: 1;
     opacity: 0.8;
     transition: bottom 4s ease;
@@ -239,7 +242,6 @@ nav .nav_content_container .nav_search_icon:hover{
     width: 350px;
     height: 450px;
     background: url("../images/content01.jpg");
-/*    background-size: cover;*/
     position: absolute;
     opacity: 0.1;
     z-index: 2;
@@ -256,7 +258,6 @@ nav .nav_content_container .nav_search_icon:hover{
 .test_layout .test_container{
     width: 350px;
     height: 450px;
-
 }
 
 .test_layout .test_container .test_card{
@@ -320,42 +321,90 @@ nav .nav_content_container .nav_search_icon:hover{
 }
 
 .test_final_pie_border{
-    width: 150px;
+/*
     height: 150px;
-    border: 5px solid white;
+    width: 150px;
+    border: 3px solid white;
     border-radius: 50%;
     position: absolute;
-    top: 98px;
-}
-
-.test_final_pie_gradient{
+    top: 116px;
+    left: 97px;
+*/
+/*    overflow:hidden;*/
+    
     width: 150px;
     height: 150px;
-    background: linear-gradient(rgb(26,216,211), #1cb5e0);
-    border: 5px solid white;
-    border-radius: 50%;
-    position: absolute;
-    top: 98px;
-    transform: rotate(45deg);
-    z-index: 2;
-    animation: gradientRotate 1s 3 alternate;
+    border-radius: 75px;
+    position:absolute;
+/*    overflow:hidden;*/
+    border: 3px solid white;
+    left: 97px;
+    top: 116px;
 }
 
-@keyframes gradientRotate{
-    from{transform: rotate(360deg);}
-    to{transform: rotate(30deg);}
+.test_final_pie_border::before{
+    content: "";
+    box-sizing: border-box;
+    width: 150px;
+    height: 75px;
+    position: absolute;
+/*
+    top: 0px;
+    left: 0px;
+*/
+    border-style: solid;
+    border-color: #1cb5e0;
+    border-radius: 75px 75px 0 0;
+    border-width: 6px 6px 6px 6px;
+    transform-origin: 75px 75px;
+    transform: rotate(180deg);
+    animation: rotateCircle 3s ease 0s 1 alternate;
+    
 }
-@-webkit-keyframes gradientRotate {
-    from{transform: rotate(360deg);}
-    to{transform: rotate(30deg);}
+
+.test_final_pie_border::after{
+    content: "";
+    box-sizing: border-box;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 150px;
+    height: 75px;
+    border-style: #1cb5e0;
+    border-color: red;
+    border-width: 6px 6px 6px 0;
+    border-radius: 75px 75px 0 0;
+    transform-origin: 75px 75px;
+    transform: rotate(0deg);
+    animation: rotateCircle 3s ease 0s 1 alternate;
 }
-@-moz-keyframes gradientRotate {
-    from{transform: rotate(360deg);}
-    to{transform: rotate(30deg);}
+
+@keyframes rotateCircle{
+    0%   { transform: rotate(0deg); }
+    50% { transform: rotate(360deg); }
+    0%   { transform: rotate(0deg); }
+    100% { transform: rotate(108deg); }
 }
-@-o-keyframes gradientRotate {
-    from{transform: rotate(360deg);}
-    to{transform: rotate(30deg);}
+
+@-webkit-keyframes rotateCircle{
+    0%   { transform: rotate(0deg); }
+    50% { transform: rotate(360deg); }
+    0%   { transform: rotate(0deg); }
+    100% { transform: rotate(108deg); }
+}
+
+@-moz-keyframes rotateCircle{
+    0%   { transform: rotate(0deg); }
+    50% { transform: rotate(360deg); }
+    0%   { transform: rotate(0deg); }
+    100% { transform: rotate(108deg); }
+}
+
+@-o-keyframes rotateCircle{
+    0%   { transform: rotate(0deg); }
+    50% { transform: rotate(360deg); }
+    0%   { transform: rotate(0deg); }
+    100% { transform: rotate(108deg); }
 }
 
 .test_final_pie{
@@ -370,8 +419,6 @@ nav .nav_content_container .nav_search_icon:hover{
     margin: 36px;
     z-index: 3;
 }
-
-
 
 .test_final_pie .test_final_pie_percent{
     color: rgb(26,216,211);
@@ -418,6 +465,7 @@ nav .nav_content_container .nav_search_icon:hover{
     color: white;
     background-color: rgba(255,255,255,.5);
 }
+
 
 /* top css*/
 
