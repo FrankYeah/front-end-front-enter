@@ -2,6 +2,7 @@ var getMember;
 var memberData;
 var memberUid;
 var getMarkedArticle;
+var getData;
 
 firebase.auth().onAuthStateChanged(function(user){
     memberData = user;
@@ -11,7 +12,7 @@ firebase.auth().onAuthStateChanged(function(user){
     firebaseMember.once('value', function(snapshot) {
         getMember = snapshot.val();
         createMemberLayout();
-        
+
         if(user.email == "indifferencedead@yahoo.com.tw"){
             app.get("#managePost").style.display = "block";
         }
@@ -22,12 +23,16 @@ firebase.auth().onAuthStateChanged(function(user){
     })
 })
 
+var firebaseData = database.ref('getData')
+firebaseData.on('value', function(snapshot) {
+    getData = snapshot.val();
+})
+
 app.member.memberLayoutDisplay = (layoutBlock,layoutNone1,layoutNone2) =>{
     app.get(layoutBlock).style.display = "flex";
     app.get(layoutNone1).style.display = "none";
     app.get(layoutNone2).style.display = "none";
 }
-
 /* create member layout */
 var memberSideBtn;
 function createMemberLayout(){
@@ -43,11 +48,13 @@ function createMemberLayout(){
     createMemberProfile();
     createMemberCollection();
     createMemberPostManage();
+    
     app.member.memberLayoutDisplay("#memberProfile","#memberCollection","#memberPostManage");
 }
 
 /* member side click */
 function memberSideClick(e){
+    
     memberSideBtn = e.target.id;
     if(memberSideBtn == "personalData"){
         app.member.memberLayoutDisplay("#memberProfile","#memberCollection","#memberPostManage");
@@ -75,7 +82,6 @@ function createMemberProfile(){
     }else{
        app.get("#profileName").placeholder = "請輸入姓名"
     }
-    
     app.createElement("div","profile_row","profileRowPhone","profileInfo","","");
     app.createElement("p","profile_title","profileTitle","profileRowPhone","手機","");
     app.createElement("input","profile_index","profilePhone","profileRowPhone","","");
@@ -101,7 +107,6 @@ function createMemberProfile(){
         app.get(modifyBtn).style.display = "block";
     }
 
-    
     function modifyClick(){
         app.get("#modifyProfileConfirm").style.display = "block";
         app.get("#modifyProfileCancel").style.display = "block";
@@ -126,6 +131,7 @@ function createMemberProfile(){
             app.get("#alertIndex").innerHTML = "修改成功";
         })
         database.ref("/member/" + memberUid).update({phone: app.get("#profilePhone").value});
+       
     }
 
     function modifyCancel(){
@@ -138,32 +144,42 @@ function createMemberProfile(){
         app.get("#profilePhone").value = getMember["phone"];
     }
 /* create collection */
+var getCollectionData;
 function createMemberCollection(){
     app.createElement("div","member_collection","memberCollection","memberDisplay","","");
-    if(getMarkedArticle){
-        for(i = 0; i < getData.length; i++){
-            if(getMarkedArticle[i]){
-                app.createElement("div","collection_card","collectionCard" + i,"memberCollection","","");
-                app.createElement("a","collection_img_container","collectionImgContainer" + i,"collectionCard" + i,"","");
-                app.get("#collectionImgContainer" + i).setAttribute("href","content.html?id=" + getMarkedArticle[i]["creatTime"]);
-                app.createElement("div","collection_img","collectionImg" + i,"collectionImgContainer" + i,"","");
-                app.get("#collectionImg" + i).style.background = "url('" + getMarkedArticle[i]["squareUrl"] + "') 50% / cover no-repeat";
-                app.createElement("div","collection_title","collectionTitle","collectionCard" + i,getMarkedArticle[i]["name"],"");
-                app.createElement("div","collection_delete","collectionDelete" + i,"collectionCard" + i,"",deleteCollection);
-                app.get("#collectionDelete" + i).setAttribute("data-No",i)
-            }
-        } 
-    }else{
+    getCollectionData = JSON.parse(localStorage.getItem(memberUid));
+    if(!getCollectionData){
         app.createElement("p","collection_index","collectionIndex","memberCollection","可以前往探索頁面進行收藏唷。","");
+    }else{
+        for(let i = 0; i < getCollectionData.length; i++){
+            app.createElement("div","collection_card","collectionCard" + i,"memberCollection","","");
+            app.createElement("a","collection_img_container","collectionImgContainer" + i,"collectionCard" + i,"","");
+            app.get("#collectionImgContainer" + i).setAttribute("href","content.html?id=" + getCollectionData[i]["creatTime"]);
+            app.createElement("div","collection_img","collectionImg" + i,"collectionImgContainer" + i,"","");
+            app.get("#collectionImg" + i).style.background = "url('" + getCollectionData[i]["squareUrl"] + "') 50% / cover no-repeat";
+            app.createElement("div","collection_title","collectionTitle","collectionCard" + i,getCollectionData[i]["name"],"");
+            app.createElement("div","collection_delete","collectionDelete" + i,"collectionCard" + i,"",deleteCollection);
+            app.get("#collectionDelete" + i).setAttribute("data-name",getCollectionData[i]["name"]);
+        }
     }
 }
 
 /* delete collection */
 function deleteCollection(e) {
-    var markNo = e.target.getAttribute("data-No");
-    database.ref("member/" + memberUid + "/collectionMarked/" + markNo).remove()
-    thisCard = e.target.parentNode;
-    thisCard.parentNode.removeChild(thisCard);
+    let markName = e.target.getAttribute("data-name");
+    for(i = 0; i < getCollectionData.length; i++){
+        if(getCollectionData[i]["name"] == markName){
+            getCollectionData.splice(i,1);
+            localStorage.setItem(getMember["uid"],JSON.stringify(getCollectionData));
+            thisCard = e.target.parentNode;
+            thisCard.parentNode.removeChild(thisCard);
+          
+            if(getCollectionData.length == 0){
+                app.createElement("p","collection_index","collectionIndex","memberCollection","可以前往探索頁面進行收藏唷。","");
+            }
+            return;
+        }
+    }
 }
 
 /* create post manage */
@@ -174,10 +190,53 @@ function createMemberPostManage(){
     for(i = 0; i < getData.length;i++){
         app.createElement("div","post_container","postContainer" + i,"memberPostContainer","","");
         app.createElement("p","post_title","postTitle","postContainer" + i,getData[i]["name"],"");
+        app.createElement("p","post_edit","postEditImg" + i,"postContainer" + i,"",postEditClick);
+        app.createElement("p","post_delete","postDeleteImg" + i,"postContainer" + i,"",postDeleteClick);
         app.get("#postContainer" + i ).setAttribute("data-post",i);
     }
     
     app.createElement("div","post_btn_container","postBtnContainer","memberPostManage","","");
     app.createElement("p","post_btn","createPostBtn","postBtnContainer","發布貼文","");
+    app.get("#createPostBtn").onclick = function(){
+        window.location = "/backstage.html";
+    }
     app.createElement("p","post_btn","editPostBtn","postBtnContainer","編輯貼文","");
+    app.createElement("p","post_btn","cancelEditBtn","postBtnContainer","取消編輯","");
+    app.get("#cancelEditBtn").style.display = "none";
+    app.get("#cancelEditBtn").onclick = function(){
+        app.get("#editPostBtn").style.display = "block";
+        app.get("#cancelEditBtn").style.display = "none";
+        for(i = 0; i < getData.length; i++){
+            app.get("#postContainer" + i).style.border = "solid 1px rgb(128, 128, 128)"
+            app.get("#postContainer" + i).style.color = "rgb(128, 128, 128)"
+            app.get("#postEditImg" + i).style.display = "none";
+            app.get("#postDeleteImg" + i).style.display = "none";
+        }
+    }
+    
+    app.get("#editPostBtn").onclick = function(){
+        app.get("#cancelEditBtn").style.display = "block";
+        app.get("#editPostBtn").style.display = "none";
+        for(i = 0; i < getData.length; i++){
+            app.get("#postContainer" + i).style.border = "solid 1px rgb(26,216,211)"
+            app.get("#postContainer" + i).style.color = "rgb(26,216,211)"
+            app.get("#postEditImg" + i).style.display = "block";
+            app.get("#postDeleteImg" + i).style.display = "block";
+        }
+    }
+}
+  var postNo;
+function postEditClick(e){
+    postNo = e.target.parentNode.getAttribute("data-post");
+    window.location = "edit.html?id=" + getData[postNo]["creatTime"];
+}
+
+function postDeleteClick(e){
+    if(confirm("確定要刪除嗎?")){
+        postNo = e.target.parentNode.getAttribute("data-post");
+        database.ref("getData/" + postNo).remove();
+        var thisArticlePost = app.get("#postContainer" + postNo); 
+        thisArticlePost.parentNode.removeChild(thisArticlePost);  
+    }
+    
 }

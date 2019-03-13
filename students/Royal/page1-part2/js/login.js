@@ -33,7 +33,7 @@ function createLoginLayout(){
     app.createElement("input","login_input password","loginPassword","inputContainer","","");
     app.get("#loginPassword").setAttribute("type","password");
     app.get("#loginPassword").setAttribute("placeholder","******");
-    app.createElement("p","login_forget","loginForget","inputContainer","忘記密碼?","");
+    app.createElement("p","login_forget","loginForget","inputContainer","忘記密碼?",app.log.forgetPassword);
     app.createElement("div","register_container","registerContainer","loginCard","","");
     app.createElement("p","register_container_btn","registerBtn","registerContainer","註冊",app.log.createAccount);
     app.createElement("p","register_container_btn","loginBtn","registerContainer","登入",app.log.logInClick);
@@ -202,6 +202,20 @@ function userLogout(){
     photoURL = "";
     firebase.auth().signOut();  
     window.location = "index.html";
+}
+
+/* forget password */
+app.log.forgetPassword = function(){
+    var auth = firebase.auth();
+    var emailAddress = app.get("#loginEmail").value;
+
+    auth.sendPasswordResetEmail(emailAddress).then(function() {
+        app.get("#alertBoxLayout").style.display = "flex";
+        app.get("#alertIndex").innerHTML = "信件已寄出，請去信箱確認";
+    }).catch(function(error) {
+        app.get("#alertBoxLayout").style.display = "flex";
+        app.get("#alertIndex").innerHTML = "信箱輸入錯誤，或尚未驗證";
+    });
 }
 
 /* log alert box */
