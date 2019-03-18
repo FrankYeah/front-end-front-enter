@@ -4,16 +4,34 @@ var getMember;
 var memberData;
 var memberUid;
 var userLogin;
-
 var firebaseData = database.ref('getData')
 firebaseData.on('value', function(snapshot) {
     getData = snapshot.val();
     getIniData()
     slideImg(getData);
-    setArticleMark()
-    checkCollectionMark()
+    
+    if(getAllCollection){
+        console.log("yes")
+        console.log(getAllCollection)
+        setArticleMark();
+    }
+    
 
 });
+
+//var firebaseMember = database.ref('member')
+//firebaseMember.on('value', function(snapshot) {
+//    getMember = snapshot.val();
+//
+//});
+
+ firebase.auth().onAuthStateChanged(function(user){
+       if(user){
+           memberUid = user.uid;
+       }
+ })
+
+
 
 /* 將搜尋到的article放    到filterData */
 function searchArticle(){
@@ -61,6 +79,7 @@ function getIniData(){
         app.createElement("div","read_more_word","","readMore" + i,"read more","");
         app.createElement("div","read_more_icon","","readMore" + i,"","");
         app.createElement("div","tag_line","","article" + i,"","");
+        
     }
 }
 
@@ -211,97 +230,58 @@ slideAction = function(){
 }
 
 /* article mark */
-    var storageRef = storage.ref();
-    var markedArticleRef = storageRef.child('markedArticle');
-
-    console.log("storageRef = " + storageRef);
-    console.log("markedArticleRef = " + markedArticleRef);
     var collectionMarkedUrl = "star-background.svg";
     var collectionUnmarkedUrl = "star-border.svg";
+    var myCollectStorage ;
+    var collectionData;
+
+//    var getAllCollection;
     function collectionMarkClick(e){
+//         localStorage.clear();
+        
         var markNo = e.getAttribute("data-mark");
         var markUrl = getComputedStyle(e).background;
-        markUrl = markUrl.split(" ")[4].split("/")[4].split('"')[0]
-        if(markUrl == collectionMarkedUrl){
-            e.style.background = "url('../images/" + collectionUnmarkedUrl + "') 50% / cover no-repeat";
-        }else{
+        markUrl = markUrl.split(" ")[4].split("/")[4].split('"')[0];
+        if(!localStorage.getItem(memberUid)){
             e.style.background = "url('../images/" + collectionMarkedUrl + "') 50% / cover no-repeat";
-        }
-
-        firebase.auth().onAuthStateChanged(function(user){
-        userLogin = firebase.auth().currentUser;
-        memberData = user;
-        memberUid = memberData.uid;
-
-        firebaseMember = database.ref('member/' + memberUid)
-             if(markUrl == collectionUnmarkedUrl){
-                 database.ref("member/" + memberUid + "/collectionMarked/" + markNo).update({
-                     marked: markNo,
-                     name: getData[markNo]["name"],
-                     squareUrl: getData[markNo]["squareUrl"],
-                     creatTime: getData[markNo]["creatTime"],
-                 })
-             }else{
-                 database.ref("member/" + memberUid + "/collectionMarked/" + markNo).remove()
-             }
-        })
-    }
-
-
-    /* change article mark */
-    firebase.auth().onAuthStateChanged(function(user){
-        if(user){
-            memberData = user;
-            memberUid = memberData.uid;
-            var markedArticle =  database.ref('member/' + memberUid + "/collectionMarked/")
-            markedArticle.once('value', function(snapshot) {
-                var markedArticle = snapshot.val();
-                if(markedArticle){
-                    for(i = 0; i < getData.length; i++){
-                       if(!markedArticle[i]){
-                           app.get("#collectionMark" + i).style.background = "url('../images/" + collectionUnmarkedUrl + "') 50% / cover no-repeat";
-                       }else{
-                           app.get("#collectionMark" + i).style.background = "url('../images/" + collectionMarkedUrl + "') 50% / cover no-repeat";
-                       }
-                    }
-                }
-            })  
+            collectionData = [{marked: markNo,
+                                    name: getData[markNo]["name"],
+                                    squareUrl: getData[markNo]["squareUrl"],
+                                    creatTime: getData[markNo]["creatTime"]
+                                   }];
             
-        }
+            localStorage.setItem(memberUid,JSON.stringify(collectionData));
         
-    })
+        }else{
+            var collectionToStorage = {marked: markNo,
+                                       name: getData[markNo]["name"],
+                                       squareUrl: getData[markNo]["squareUrl"],
+                                       creatTime: getData[markNo]["creatTime"]
+                                      };
+            let getAllCollection;
+            getAllCollection = JSON.parse(window.localStorage.getItem(memberUid));
+            for(i = 0; i < getAllCollection.length; i++){
+                if(getAllCollection[i]["name"] == getData[markNo]["name"]){
+                    e.style.background = "url('../images/" + collectionUnmarkedUrl + "') 50% / cover no-repeat";
+                    getAllCollection.splice(i,1)
+                    localStorage.setItem(memberUid, JSON.stringify(getAllCollection)); 
+                    return;
+                }else{
+                     e.style.background = "url('../images/" + collectionMarkedUrl + "') 50% / cover no-repeat";
+                }
+            }
+            getAllCollection.push(collectionToStorage)
+            localStorage.setItem(memberUid, JSON.stringify(getAllCollection)); 
+        }
+       
+        
+    }
 
     /* set initial article marked */
+    var getAllCollection;
     function setArticleMark(){
-        firebase.auth().onAuthStateChanged(function(user){
-            if(user){
-                memberData = user;
-                memberUid = memberData.uid;
-                var memberData =  database.ref('member/' + memberUid + "/collectionMarked/")
-                memberData.once('value', function(snapshot) {
-                    var markedArticle = snapshot.val();
-                    for(i = 0; getData.length < 9; i++){
-                        if(!markedArticle[i]){
-                            app.get("#collectionMark" + i).style.background = "url('../images/" + collectionUnmarkedUrl + "') 50% / cover no-repeat";
-                        }else{
-                            app.get("#collectionMark" + i).style.background = "url('../images/" + collectionMarkedUrl + "') 50% / cover no-repeat";
-                        }
-                    }
-                }) 
-            }
-        })
+        getAllCollection = JSON.parse(localStorage.getItem(memberUid));
+        for(i = 0; i < getAllCollection.length; i++){
+            app.get("#collectionMark" + getAllCollection[i]["marked"]).style.background = "url('../images/" + collectionMarkedUrl + "') 50% / cover no-repeat";
+        }
     }
-
-    /* if not login, make mark display none */
-    function checkCollectionMark(){
-        firebase.auth().onAuthStateChanged(function(user){
-            if(!user){
-               for(i = 0; i < getData.length; i++){
-                   app.get("#collectionMark" + i).style.display = "none";
-
-               }
-            }
-        });
-    }
-
-

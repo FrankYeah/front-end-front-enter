@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html id="html">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>編輯貼文</title>
+        <link rel="icon" type="image/png" href="images/favicon.ico">
+        
+        
+        <link rel="stylesheet" type="text/css" href="css/grid.css">
+        <link rel="stylesheet" type="text/css" href="css/common.css">
+        <link rel="stylesheet" type="text/css" href="css/loading.css">
+        <link rel="stylesheet" type="text/css" href="css/edit.css">
+        <link rel="stylesheet" type="text/css" href="css/login.css">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+        
+        <script src="https://www.gstatic.com/firebasejs/5.8.4/firebase.js"></script>
+        <script src="js/firebase.js"></script>
+    </head>
+    <body id="body">
+        <header >
+            <nav id="header">
+                <div class="col-phone-25 col-tablet-50">
+                    <div class="nav_logo_container">
+                        <a  href="./index.html">
+                            <img class="nav_logo" src="images/nav_logo.png">
+                        </a>
+                    </div>
+                </div>
+                <div class="col-phone-75 col-tablet-50">
+                    <div class="nav_content_container" id="navContentContainer">
+                        <a class="nav_link" href="./article.html">
+                            <span class="nav_content" >探索</span>
+                        </a>
+                        <a class="nav_link" href="./article.html">
+                            <span class="nav_content">技能樹</span>
+                        </a>
+                        <span class="nav_content" id="navLoginBtn">登入</span>
+                        <a class="nav_link member" id="navMemberLink"href="./member.html">
+                            <span class="nav_content" id="navMember">會員</span>
+                        </a>
+                        <a class="nav_search">
+                            <img class="nav_search_icon" src="images/nav_search.png" onclick="search()">
+                        </a>    
+                    </div>
+                </div>
+            </nav>
+        </header>
+        <main>
+            <!-- loading page -->
+            <div id="loadingDraw" class="loading_draw"></div>
+            <div id="loadingPage" class="loading_page" >
+                <div class="loading_logo">
+                </div>
+            </div>
+            <!-- search bar -->
+            <div id="searchBar">
+                <div class="searchBar_container">
+                    <p class="searchBar_title">SEARCH</p>
+                    <form class="searchBar_form" id="searchBar_Form">
+                        <input class="search_input" id="searchInput">
+                        <img class="searchBar_icon search_mic" id="searchMic" src="images/searchBar_mic.svg">
+                        <img class="searchBar_icon search_search" id="searchSearch" src="images/searchBar_search.png">
+                    </form>
+                </div>
+                <div class="fullSearch" onclick="fullSearchClick()"></div>
+            </div>
+            
+            <style>
+
+                
+            </style>
+            
+            <!-- backstage poster -->
+            <div class="backstage_poster">
+                <p class="backstage_poster_title" id="backstagePosterTitle"></p>
+            </div>
+            <!-- backstage section -->
+            <section class="backstage_section" id="backstageSection">
+                <div class="backstage_logout" id="backstage_logout">登出</div>
+                <p>名稱</p>
+                <input id="backstageName" type="text" placeholder="Appworks School">
+                <p>學習城市</p>
+                <input id="backstageCity" type="text" placeholder="台北">
+                <p>技能</p>
+                <input id="backstageSkill" type="text" placeholder="前端">
+                <p>技術</p>
+                <input id="backstageTechnology" type="text" placeholder="Html、CSS、javaScript">
+                <p>每月費用</p>
+                <input id="backstageFee" type="text" placeholder="3000">
+                <p>課程天數</p>
+                <input id="backstageTotalDay" type="text" placeholder="60">
+                <p>每周時數</p>
+                <input id="backstageWeekHour" type="text" placeholder="40">
+                <p>創辦多久</p>
+                <input id="backstageFoundYear" type="text" placeholder="3">
+                <p>教學方式</p>
+                <input id="backstageTeachWay" type="text" placeholder="放養制">
+                <p>班制</p>
+                <input id="backstageClassType" type="text" placeholder="小班制">
+                <p>老師數量</p>
+                <input id="backstageTeacherNum" type="text" placeholder="2">
+                <p>內文標題</p>
+                <input id="backstageTopic" type="text" placeholder="內文標題">
+                <p>前言</p>
+                <input id="backstagePreface" type="text" placeholder="AppWorks School 已有五屆...">
+                <p>內文</p>
+                <textarea id="backstageContent" name="內文" cols="30" rows="10"></textarea>
+                <p>聯絡(電話、郵件)</p>
+                <input id="backstagePhone" type="text" placeholder="0919-123-123">
+                <input id="backstageEmail" type="email" placeholder="indifferencedead@yahoo.com.tw">
+                <p>方形圖片上傳</p>
+                <input id="editSquarePic" type="file">
+                <p>長方形圖片上傳</p>
+                <input id="editRectanglePic" type="file">
+                <div class="backstage_btn_container" id="backstageBtnContainer">
+                    <p class="backstage_btn" id="editPostBtn">更新貼文</p>
+                    <p class="backstage_btn" id="editCancelBtn">取消編輯</p>
+                </div>
+            </section>
+           
+            <!--top-->
+            <section>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-phone-100">
+                            <div class="top">
+                                <img class="top_btn" src="images/top.png" href="#body" onclick="backToTop()">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <footer>
+            <div class="container">
+                <div class="row">
+                    <div class="col-phone-75">
+                        <div class="row">
+                            <div class="col-phone-100 col-tablet-20">
+                                <div class="footer_container">
+                                    <span class="footer_content contact">聯絡</span>
+                                </div>
+                            </div>
+                            <div class="col-phone-100 col-tablet-40">
+                                <div class="footer_container">
+                                    <p class="footer_content title">M</p>
+                                    <p class="footer_content detail">0917-111-111</p>
+                                </div>
+                            </div>
+                            <div class="col-phone-100 col-tablet-40">
+                                <div class="footer_container">
+                                    <span class="footer_content title">E</span>
+                                    <span class="footer_content detail">aaaaaa@gmail.com</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-phone-25">
+                        <div class="links_container">
+                            <a href="https://www.facebook.com/" target="_blank">
+                                <img class="link" src="images/facebook.svg">
+                            </a>
+                            <a>
+                                <img class="link" src="images/line.png">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <script src="js/lib.js"></script>
+        <script src="js/common.js"></script>
+        <script src="js/login.js"></script>
+        <script src="js/edit.js"></script>
+    </body>
+</html>

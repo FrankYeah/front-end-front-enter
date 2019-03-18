@@ -29,6 +29,7 @@ function getPoster(){
     getThisArticle();
     document.getElementById("poster").style.background = "url('" + thisData[0]["rectangleUrl"] + "') 50% / cover no-repeat";
     document.getElementById("posterTitle").textContent = thisData[0]["name"];
+    console.log(thisData)
 }
 
 function getContent(){

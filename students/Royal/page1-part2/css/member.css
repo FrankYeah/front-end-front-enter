@@ -243,6 +243,38 @@
             line-height: 16px;
             border-radius: 6px;
             color: rgb(128, 128, 128);
+            
+            display: flex;
+            flex-direction: row;
+            justify-content:space-around;
+        }
+
+        .member_post_manage .member_post_container .post_container .post_edit{
+            display: none;
+            width: 16px;
+            height: 16px;
+            background: url("../images/edit-modify-button.svg");
+            background-size: cover;
+            cursor: pointer;
+            transition: all 1s linear;
+        }
+
+        .member_post_manage .member_post_container .post_container .post_edit:hover{
+            transform: scale(1.2)
+        }
+
+        .member_post_manage .member_post_container .post_container .post_delete{
+            display: none;
+            width: 16px;
+            height: 16px;
+            background: url("../images/edit-delete-button.svg");
+            background-size: cover;
+            cursor: pointer;
+            transition: all 1s linear;
+        }
+
+        .member_post_manage .member_post_container .post_container .post_delete:hover{
+            transform: scale(1.2)
         }
 
         .member_post_manage .member_post_container .post_container .post_title{
@@ -274,6 +306,7 @@
             cursor: pointer;
             letter-spacing: 3px;
         }
+        
         
         /* RWD */
         @media(max-width: 879px){
