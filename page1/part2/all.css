@@ -1,0 +1,378 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+.header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: white;
+    opacity: 0.8;
+    position: fixed;
+    width: 1519px;
+}
+.header a:hover{
+    transform: scale(1.2,1.2);
+}
+.logo{
+    width: 134px;
+    margin-left: 60px;
+}
+.title{
+    width: 607px;
+    line-height: 99px;
+    display: flex;
+    justify-content: space-around;
+    margin-right: 60px;
+}
+.title a:hover{
+    color: rgb(26,216,211);
+}
+.font{
+    text-decoration: none;
+    color: grey;
+    font-size: 16px;
+    font-family: "Noto Sans TC";
+}
+.search{
+    width: 18px;
+}
+
+.textgo{
+    width: 78px;
+    position: fixed;
+    right: 0;
+    top: 500px;
+    opacity: 0.7;
+}
+
+.bg1{
+    max-width: 1519px;
+    height: 710px;
+    background-image: url(https://frankyeah.github.io/Front-Enter/images/key-visual.jpg);
+    background-position: center;
+    margin-bottom: 10px;
+}
+.bg1word1{
+    padding-top: 370px;
+    padding-left: 620px;
+    color: white;
+    font-size: 38px;
+    font-family: "Noto Sans TC";
+    font-weight: 700;
+    line-height: 48px;
+}
+.bg1word1:hover{
+    transform: rotate(-5deg);
+}
+.bg1word2{
+    padding-left: 685px;
+    color: white;
+    font-size: 24px;
+    font-family: "Noto Sans TC";
+}
+.arrow{
+    display: block;
+    margin: 0 auto;
+    transform: rotate(90deg);
+    width: 20px;
+    padding-left: 400px;
+    animation: toggle 0.3s alternate infinite;
+}
+@keyframes toggle {
+    to {
+      transform: translateY(10px) rotate(90deg);
+    }
+  }
+
+.bg2{
+    max-width: 1519px;
+    height: 550px;
+    background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.6)),url(https://frankyeah.github.io/Front-Enter/images/second-img.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    margin-bottom: 10px;
+}
+.bg2word1{
+    padding-top: 250px;
+    padding-left: 620px;
+    color: white;
+    font-size: 18px;
+    line-height: 36px;
+}
+.bg2word2{
+    padding-left: 655px;
+    color: white;
+    font-size: 18px;
+    line-height: 36px;
+}
+.btn{
+    width: 128px;
+    font-size: 18px;
+    line-height: 30px;
+    margin-top: 24px;
+    margin-left: 690px;
+    border: 1px solid rgb(26,216,211);
+    border-radius: 5px;
+    background: transparent;
+    color: rgb(26,216,211);
+}
+.btn:hover{
+    transform: scale(1.3,1.3);
+}
+
+.bg3{
+    max-width: 1519px;
+    height: 550px;
+    background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.6)),url(https://frankyeah.github.io/Front-Enter/images/third-img.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    margin-bottom: 10px;
+}
+.bg3word1{
+    padding-top: 180px;
+    padding-left: 700px;
+    color: white;
+    font-size: 20px;
+    line-height: 36px;
+}
+.course{
+    width: 228px;
+    font-size: 18px;
+    line-height: 30px;
+    margin-top: 24px;
+    margin-left: 630px;
+    border: 1px solid rgb(26,216,211);
+    border-radius: 5px;
+    background: transparent;
+    color: rgb(26,216,211);
+}
+.course:hover{
+    transform: scale(1.3,1.3);
+    color: rgba(26, 216, 210, 0.521);
+}
+
+.bg4{
+    max-width: 1519px;
+    height: 750px;
+    background-image: url(https://frankyeah.github.io/Front-Enter/images/15.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.frame{
+    background-image: url(https://frankyeah.github.io/Front-Enter/images/FE_white.png);
+    width: 336px;
+    height: 445px;
+    margin-right: 20px;
+}
+.pen{
+    width: 40px;
+    margin-left: 180px;
+    margin-top: 80px;
+}
+.search1{
+    margin-left: 170px;
+    margin-top: 30px;
+    font-size: 24px;
+    color: rgb(26,216,211);
+}
+.border{
+    margin-left: 168px;
+    margin-top: 30px;
+    width: 48px;
+    border: 1px solid rgb(26,216,211);
+    padding: 0.5px;
+}
+.text{
+    margin-left: 60px;
+    margin-top: 20px;
+    line-height: 30px;
+    text-align: center;
+}
+.school{
+    margin-left: 135px;
+    margin-top: 30px;
+    width: 120px;
+    font-size: 18px;
+    background: rgb(26,216,211);
+    border: 1px solid rgb(26,216,211);
+    border-radius: 5px;
+    color: white;
+}
+.school:hover{
+    color:rgb(207, 206, 206);
+}
+.pen2{
+    width: 40px;
+    margin-left: 175px;
+    margin-top: 80px;
+}
+.search2{
+    margin-left: 155px;
+    margin-top: 30px;
+    font-size: 24px;
+    color: rgb(26,216,211);
+}
+.border2{
+    margin-left: 165px;
+    margin-top: 30px;
+    width: 48px;
+    border: 1px solid rgb(26,216,211);
+    padding: 0.5px;
+}
+.text2{
+    margin-left: 60px;
+    margin-top: 20px;
+    line-height: 30px;
+    text-align: center;
+}
+.school2{
+    margin-left: 135px;
+    margin-top: 30px;
+    width: 120px;
+    font-size: 18px;
+    background: rgb(26,216,211);
+    border: 1px solid rgb(26,216,211);
+    border-radius: 5px;
+    color: white;
+}
+.school2:hover{
+    color: rgb(207, 206, 206);
+}
+
+.bg5{
+    max-width: 1519px;
+    height: 700px;
+    background-image: url(https://frankyeah.github.io/Front-Enter/images/five-img.jpg);
+    background-position: bottom;
+    margin-bottom: 10px;
+}
+.bg5word1{
+    padding-top: 370px;
+    padding-left: 730px;
+    color: white;
+    font-size: 24px;
+}
+.bg5word2{
+    width: 20px;
+    border: 1px solid white;
+    margin-left: 743px;
+    margin-top: 16px;
+    margin-bottom: 16px;
+    padding-top: 1px;
+}
+.bg5word3{
+    padding-left: 460px;
+    color: white;
+    font-size: 18px;
+    line-height: 30px;
+}
+.bg5word4{
+    padding-left: 460px;
+    margin-top: 16px;
+    color: white;
+    font-size: 18px;
+    line-height: 30px;
+}
+
+.button{
+    height: 186px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.top{
+    width: 36px;
+}
+.top:hover{
+    transform: scale(1.3,1.3);
+}
+
+.footer{
+    background: #ececec;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 80px;
+}
+.contant{
+    font-size: 13px;
+}
+.phone{
+    font-size: 13px;
+    color: rgb(26,216,211);
+}
+.number{
+    color: #000;
+    padding-left: 24px;
+}
+.mail{
+    font-size: 13px;
+    color: rgb(26,216,211);
+}
+.email{
+    color: #000;
+    padding-left: 24px;
+}
+.fb{
+    width: 30px;
+    margin-right: 5px;
+}
+.line{
+    width: 30px;
+}
