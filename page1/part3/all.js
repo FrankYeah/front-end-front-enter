@@ -1,3 +1,4 @@
+//scroll TOP按鈕 減速上滑
 var btn = document.getElementById('totop');
 
 btn.addEventListener("click", function() {
@@ -10,9 +11,7 @@ btn.addEventListener("click", function() {
   }, 20);
 });
 
-
-
-
+//scroll 頁首透明度
 window.addEventListener('scroll' , () => {
   var header = document.querySelector('.header');
   if( document.documentElement.scrollTop > 0){
@@ -21,3 +20,19 @@ window.addEventListener('scroll' , () => {
   header.style.opacity = "1"
   }
 });
+
+//settimeout loading畫面 https://medium.com/@AntheaLee/js-%E8%A8%88%E7%AE%97%E7%A7%92%E6%95%B8%E9%9A%B1%E8%97%8F%E7%89%A9%E4%BB%B6-f7b24f7e1a0
+window.setTimeout(loading,1000);
+function loading () {
+  document.getElementById("loading").style.display = "none";
+}
+
+//search 按鈕
+window.onload = function(){
+  document.getElementById("search").onclick = function(){
+    if(document.getElementById("hide").style.display == "none")
+    document.getElementById("hide").style.display = "block";
+    else
+    document.getElementById("hide").style.display = "none";
+  }
+}

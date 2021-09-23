@@ -47,6 +47,28 @@ table {
 	border-spacing: 0;
 }
 
+.loading{
+    width: 100%;
+    height: 900px;
+    background-image: linear-gradient(0deg,rgb(26, 216, 211) 10%, rgb(216, 216, 224) 0%);
+    display: flex;
+    justify-content: center;
+    padding-top: 200px;
+    animation: transitionOut 1s ease-in;
+}
+@keyframes transitionOut {
+    100% {
+        transform: translateY(-100%);
+    }
+    0% {
+        transform: translateY(0);
+    }
+}
+
+.frontlogo{
+    width: 300px;
+    position: fixed;
+}
 .header{
     display: flex;
     justify-content: space-between;
@@ -56,7 +78,7 @@ table {
     position: fixed;
     width: 100%;
     padding-left: 5%;
-
+    z-index: 1;
 }
 .header a:hover{
     transform: scale(1.2,1.2);
@@ -83,7 +105,56 @@ table {
 }
 .search{
     width: 18px;
+    cursor: pointer;
 }
+.searchText{
+    text-align: center;
+    color: rgb(26, 216, 211);
+    font-size: 18px;
+    letter-spacing: 3px;
+    font-family: "Noto Sans TC";
+    padding-top: 50px;
+    padding-bottom: 20px;
+    position: relative;
+}
+.inputText{
+    width: 60%;
+    display: block;
+    margin: 0 auto;
+    line-height: 50px;
+    font-size: 32px;
+    border-radius: 20px;
+    border: white;
+    margin-left: 300px;
+    position: absolute;
+}
+.hideSearch{
+    width: 30px;
+    margin-left: 1175px;
+    margin-top: 10px;
+    position: absolute;
+}
+.hideSearch:hover{
+    cursor: pointer;
+}
+.microphone{
+    width: 30px;
+    margin-left: 1135px;
+    margin-top: 10px;
+    position: absolute;
+}
+.microphone:hover{
+    cursor: pointer;
+}
+.hide{
+    display: none;
+    width: 100%;
+    height: 400px;
+    padding-top: 100px;
+    background-color: rgb(243,243,243);
+    position: fixed;
+}
+
 .textgo{
     width: 78px;
     position: fixed;
@@ -437,6 +508,20 @@ table {
 }
 
 @media (max-width: 479px){
+    .inputText{
+        width: 80%;
+        margin-left: 45px;
+    }
+    .hideSearch{
+        width: 25px;
+        margin-left: 400px;
+        margin-top: 12px;
+    }
+    .microphone{
+        width: 25px;
+        margin-left: 365px;
+        margin-top: 12px;
+    }
     .header{
         display: flex;
         justify-content: space-evenly;
