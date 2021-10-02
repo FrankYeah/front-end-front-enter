@@ -1,0 +1,853 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+.loading1{
+    z-index: 4;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    background: rgb(26, 216, 211);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-top: 200px;
+    transition: all 1s linear;
+    animation: transitionOut 1s ease-in;
+    animation-delay: 1s;
+}
+.loading2{
+    z-index: 4;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    background: rgb(216, 216, 224);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: all 1s linear;
+    animation: transitionOut 1s ease-in;
+    animation-delay: 1s;
+}
+@keyframes transitionOut {
+    100% {
+        transform: translateY(-100%);
+    }
+    0% {
+        transform: translateY(0);
+    }
+}
+.frontlogo{
+    width: 300px;
+    position: fixed;
+    transition: all 1 linear;
+    animation : upanddown 1s ease-in;
+}
+@keyframes upanddown{
+    0%   {  margin-bottom: 100px; }
+    75%  {  margin-bottom: -30px; }
+    100% {  margin-bottom: 0px; }
+}
+.box{
+    width: 300px;
+    position: fixed;
+    background: rgb(216, 216, 224);
+}
+
+.header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: white;
+    opacity: 1;
+    position: fixed;
+    width: 100%;
+    padding-left: 5%;
+    z-index: 3;
+}
+.header a:hover{
+    transform: scale(1.2,1.2);
+    transition: all 1s ease-out;
+}
+.logo{
+    width: 150px;
+}
+.title{
+    width: 60%;
+    line-height: 99px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+.title a:hover{
+    color: rgb(26,216,211);
+}
+.font{
+    text-decoration: none;
+    color: grey;
+    font-size: 16px;
+    font-family: "Noto Sans TC";
+}
+
+.hide{
+    display: none;
+    width: 100%;
+    height: 400px;
+    padding-top: 100px;
+    background-color: rgb(243,243,243);
+    position: fixed;
+    z-index: 2;
+}
+.hide2{
+    display: none;
+    width: 100%;
+    height: 350px;
+    margin-top: 400px;
+    background-color: black;
+    opacity: 0.7;
+    position: fixed;
+    z-index: 1;
+}
+.search{
+    width: 18px;
+    cursor: pointer;
+}
+.searchText{
+    text-align: center;
+    color: rgb(26, 216, 211);
+    font-size: 18px;
+    letter-spacing: 3px;
+    font-family: "Noto Sans TC";
+    padding-top: 50px;
+    padding-bottom: 20px;
+    position: relative;
+}
+.inputText{
+    width: 60%;
+    margin-left: 20%;
+    line-height: 50px;
+    font-size: 32px;
+    border-radius: 20px;
+    border: white;
+    position: absolute;
+}
+.hideSearch{
+    width: 30px;
+    margin-left: 78%;
+    margin-top: 10px;
+    position: absolute;
+}
+.hideSearch:hover{
+    cursor: pointer;
+}
+.microphone{
+    width: 30px;
+    margin-left: 75%;
+    margin-top: 10px;
+    position: absolute;
+}
+.microphone:hover{
+    cursor: pointer;
+}
+
+.login{
+    display: none;
+}
+.loginTitle{
+    z-index: 2;
+    width: 350px;
+    height: 430px;
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    background: rgb(255,255,255);
+    border-radius: 5px;
+    border: 1px solid #979797;
+    margin-top: 170px;
+    margin-left: 38%;
+}
+.loginLogo{
+    width: 225px;
+    height: 105px;
+    margin-left: 60px;
+}
+.inputMail{
+    width: 250px;
+    margin-left: 50px;
+    line-height: 24px;
+    font-size: 18px;
+    letter-spacing: 3px;
+}
+.inputCode{
+    width: 250px;
+    margin-left: 50px;
+    line-height: 24px;
+    font-size: 18px;
+    letter-spacing: 3px;
+}
+.forgetCode{
+    font-size: 16px;
+    text-align: right;
+    color: rgb(128,128,128);
+    cursor: pointer;
+    margin-right: 40px;
+    margin-top: 24px;
+    letter-spacing: 4px;
+}
+.registerbtn{
+    width: 110px;
+    height: 38px;
+    line-height: 38px;
+    font-size: 18px;
+    text-align: center;
+    border-radius: 5px;
+    border: none;
+    background: rgb(26,216,211);
+    color: white;
+    cursor: pointer;
+    margin-top: 36px;
+    margin-left: 50px;
+}
+.loginbtn{
+    width: 110px;
+    height: 38px;
+    line-height: 38px;
+    font-size: 18px;
+    text-align: center;
+    border-radius: 5px;
+    border: none;
+    background: rgb(26,216,211);
+    color: white;
+    cursor: pointer;
+    margin-top: 36px;
+    margin-left: 40px;
+}
+.loginGmail{
+    width: 260px;
+    height: 38px;
+    line-height: 38px;
+    font-size: 18px;
+    text-align: center;
+    border-radius: 5px;
+    border: none;
+    background: #d93025;
+    color: white;
+    margin-top: 24px;
+    margin-left: 50px;
+    cursor: pointer;
+}
+.hide3{
+    display: none;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    opacity: 0.7;
+    position: fixed;
+    z-index: 1;
+}
+
+.testgo{
+    width: 78px;
+    position: fixed;
+    right: 0;
+    top: 400px;
+    opacity: 0.7;
+    transition: transform 3s ease;
+}
+.testgo:hover{
+    cursor: pointer;
+    transform: translateY(-50%);
+}
+@keyframes textgoup {
+    form{
+        top: 400px;
+    }
+    to{
+        top: 200px;
+    }
+}
+.test{
+    display: none;
+    z-index: 2;
+    position: fixed;
+}
+.testText2{
+    width: 350px;
+    height: 430px;
+    position: fixed;
+    background-image: url(https://frankyeah.github.io/Front-Enter/images/Staff-Selection-.jpg);
+    border-radius: 5px;
+    margin-top: 170px;
+    margin-left: 38%;
+    opacity: 0.7;
+}
+.testText{
+    width: 350px;
+    height: 430px;
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    background: rgb(26,216,211);
+    background-position-x: top;
+    background-position-y: center;
+    background-size: cover;
+    border-radius: 5px;
+    margin-top: 170px;
+    margin-left: 38%;
+    opacity: 0.9;
+}
+.testh1{
+    color: white;
+    font-size: 24px;
+    text-align: center;
+    font-weight: bolder;
+    letter-spacing: 3px;
+    padding-top: 70px;
+}
+.testp{
+    color: white;
+    font-size: 18px;
+    text-align: left;
+    padding: 30px 50px 0px 50px;
+    letter-spacing: 1px;
+    line-height: 30px;
+}
+.testBtn{
+    color: rgb(26,216,211);
+    font-size: 18px;
+    background: white;
+    text-align: center;
+    width: 150px;
+    border: none;
+    border-radius: 5px;
+    line-height: 40px;
+    cursor: pointer;
+    margin-top: 40px;
+    margin-left: 100px;
+}
+.hide4{
+    display: none;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    opacity: 0.3;
+    position: fixed;
+    z-index: 1;
+}
+
+.bg1{
+    width: 100%;
+    height: 710px;
+    background-image: url(https://frankyeah.github.io/Front-Enter/images/key-visual.jpg);
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.bg1word1{
+    text-align: center;
+    color: white;
+    font-size: 38px;
+    font-family: "Noto Sans TC";
+    font-weight: 700;
+    line-height: 48px;
+    letter-spacing: 6px;  
+}
+.bg1word1:hover{
+    transform: rotate(-5deg);
+}
+.bg1word2{
+    text-align: center;
+    color: white;
+    font-size: 24px;
+    font-family: "Noto Sans TC";
+    letter-spacing: 12px;
+    margin-top: 8px;
+}
+.arrow{
+    display: block;
+    margin: 0 auto;
+    transform: rotate(90deg);
+    width: 20px;
+    padding-left: 400px;
+    animation: toggle 0.3s alternate infinite;
+}
+@keyframes toggle {
+    to {
+      transform: translateY(10px) rotate(90deg);
+    }
+  }
+
+.bg2{
+    width: 100%;
+    height: 550px;
+    background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.6)),url(https://frankyeah.github.io/Front-Enter/images/second-img.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    margin-bottom: 10px;
+}
+.bg2word1{
+    padding-top: 250px;
+    color: white;
+    font-size: 18px;
+    line-height: 36px;
+    text-align: center;
+}
+.bg2word2{
+    color: white;
+    font-size: 18px;
+    line-height: 36px;
+    text-align: center;
+}
+.btn{
+    width: 128px;
+    font-size: 18px;
+    line-height: 30px;
+    margin-top: 24px;
+    display: block;
+    margin: 0 auto;
+    border: 1px solid rgb(26,216,211);
+    border-radius: 5px;
+    background: transparent;
+    color: rgb(26,216,211);
+    margin-top: 20px;
+    
+}
+.bg2 a{
+    text-decoration: none;
+}
+.btn:hover{
+    transform: scale(1.3,1.3);
+    transition: all 1s ease-out;
+    cursor: pointer;
+}
+
+
+
+.bg3{
+    width: 100%;
+    height: 550px;
+    background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.6)),url(https://frankyeah.github.io/Front-Enter/images/third-img.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    margin-bottom: 10px;
+}
+.bg3word1{
+    padding-top: 180px;
+    color: white;
+    font-size: 20px;
+    line-height: 36px;
+    text-align: center;
+}
+.course{
+    width: 228px;
+    font-size: 18px;
+    line-height: 30px;
+    margin-top: 24px;
+    margin-left: 630px;
+    border: 1px solid rgb(26,216,211);
+    border-radius: 5px;
+    background: transparent;
+    color: rgb(26,216,211);
+    display: block;
+    margin: 0 auto;
+    margin-top: 30px;
+}
+.bg3 a{
+    text-decoration: none;
+}
+.course:hover{
+    transform: scale(1.3,1.3);
+    color: rgba(26, 216, 210, 0.521);
+    transition: all 1s ease-out;
+    cursor: pointer;
+}
+
+.bg4{
+    width: 100%;
+    height: 750px;
+    background-image: url(https://frankyeah.github.io/Front-Enter/images/15.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 0;
+}
+.frame{
+    background-image: url(https://frankyeah.github.io/Front-Enter/images/FE_white.png);
+    width: 336px;
+    height: 445px;
+    margin-right: 20px;
+    position: relative;
+}
+.triangle{
+    margin-left: 91%;
+    margin-top: 50px;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 30px 0 0 30px;
+    border-color: transparent transparent transparent rgb(26,216,211);
+    position: absolute;
+}
+.pen{
+    width: 40px;
+    margin-left: 53%;
+    margin-top: 80px;
+}
+.search1{
+    margin-left: 50%;
+    margin-top: 30px;
+    font-size: 24px;
+    color: rgb(26,216,211);
+}
+.border{
+    margin-left: 50%;
+    margin-top: 30px;
+    width: 48px;
+    border: 1px solid rgb(26,216,211);
+    padding: 0.5px;
+}
+.text{
+    margin-left: 20%;
+    margin-top: 20px;
+    line-height: 30px;
+    text-align: center;
+}
+.school{
+    margin-left: 40%;
+    margin-top: 30px;
+    width: 120px;
+    font-size: 18px;
+    background: rgb(26,216,211);
+    border: 1px solid rgb(26,216,211);
+    border-radius: 5px;
+    color: white;
+}
+.school:hover{
+    color:rgb(207, 206, 206);
+    cursor: pointer;
+}
+.pen2{
+    width: 40px;
+    margin-left: 51%;
+    margin-top: 80px;
+}
+.search2{
+    margin-left: 45%;
+    margin-top: 30px;
+    font-size: 24px;
+    color: rgb(26,216,211);
+}
+.border2{
+    margin-left: 48%;
+    margin-top: 30px;
+    width: 48px;
+    border: 1px solid rgb(26,216,211);
+    padding: 0.5px;
+}
+.text2{
+    margin-left: 15%;
+    margin-top: 20px;
+    line-height: 30px;
+    text-align: center;
+}
+.school2{
+    margin-left: 40%;
+    margin-top: 30px;
+    width: 120px;
+    font-size: 18px;
+    background: rgb(26,216,211);
+    border: 1px solid rgb(26,216,211);
+    border-radius: 5px;
+    color: white;
+}
+.school2:hover{
+    color: rgb(207, 206, 206);
+    cursor: pointer;
+}
+
+
+.bg5{
+    width: 100%;
+    height: 700px;
+    background-image: url(https://frankyeah.github.io/Front-Enter/images/five-img.jpg);
+    background-position: bottom;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-bottom: 10px;
+}
+.bg5word1{
+    padding-top: 370px;
+    color: white;
+    font-size: 24px;
+    text-align: center;
+    
+}
+.bg5word2{
+    width: 20px;
+    border: 1px solid white;
+    margin-top: 16px;
+    margin-bottom: 16px;
+    padding-top: 1px;
+    margin-left: 49.25%;
+}
+.bg5word3{
+    color: white;
+    font-size: 18px;
+    line-height: 30px;
+    text-align: center;
+}
+.bg5word4{
+    margin-top: 16px;
+    color: white;
+    font-size: 18px;
+    line-height: 30px;
+    text-align: center;
+}
+
+
+.button{
+    height: 186px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.top{
+    width: 36px;
+}
+.top:hover{
+    transform: scale(1.3,1.3);
+    transition: all 1s ease-out;
+    cursor: pointer;
+}
+
+.footer{
+    background: #ececec;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 80px;
+}
+.contant{
+    font-size: 13px; 
+}
+.phone{
+    font-size: 13px;
+    color: rgb(26,216,211);
+}
+.number{
+    color: #000;
+    padding-left: 24px;
+    letter-spacing: 4px;
+}
+.mail{
+    font-size: 13px;
+    color: rgb(26,216,211);
+}
+.email{
+    color: #000;
+    padding-left: 24px;
+    letter-spacing: 4px; 
+}
+.fb{
+    width: 30px;
+    margin-right: 5px;
+}
+.line{
+    width: 30px;
+}
+
+@media (max-width: 479px){
+    .inputText{
+        width: 80%;
+        margin-left: 45px;
+    }
+    .hideSearch{
+        width: 25px;
+        margin-left: 400px;
+        margin-top: 12px;
+    }
+    .microphone{
+        width: 25px;
+        margin-left: 365px;
+        margin-top: 12px;
+    }
+    .header{
+        display: flex;
+        justify-content: space-evenly;
+    }
+    .title{
+        width: 200px;
+    }
+    .bg2{
+        background-attachment: none;
+    }
+    .bg4{
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .frame{
+        width: 224px;
+        height: 336px;
+    }
+    .triangle{
+        margin-left: 88%;
+        margin-top: 50px;
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 30px 0 0 30px;
+        border-color: transparent transparent transparent rgb(26,216,211);
+        position: absolute;
+    }
+    .pen{
+        width: 30px;
+        margin-top: 60px;
+        margin-left: 55%;
+    }
+    .search1{
+        font-size: 16px;
+        margin-top: 20px;
+        margin-left: 55%;
+    }
+    .border{
+        margin-top: 20px;
+    }
+    .text{
+        font-size: 14px;
+        text-align: center;
+        padding-left: 20px;
+    }
+    .school{
+        font-size: 14px;
+        margin-left: 35%;
+    }
+    .pen2{
+        width: 30px;
+        margin-top: 60px;
+        margin-left: 55%;
+    }
+    .search2{
+        font-size: 16px;
+        margin-top: 20px;
+        margin-left: 50%;
+    }
+    .border2{
+        margin-top: 20px;
+    }
+    .text2{
+        font-size: 14px;
+        text-align: center;
+        padding-left: 20px;
+    }
+    .school2{
+        font-size: 14px;
+        margin-left: 35%;
+    }
+    .bg5word3{
+        text-align: left;
+        padding-left: 24px;
+        padding-right: 21px;
+    }
+    .bg5word3 br{
+        content: "";
+        display: none;
+    }
+    .bg5word4{
+        text-align: left;
+        padding-left: 24px;
+        padding-right: 21px;
+    }
+    .bg5word4 br{
+        content: "";
+        display: none;
+    }
+    .bg5word2{
+        margin-left: 48%;
+    }
+    .footer{
+        height: 120px;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+    .textgo{
+        width: 78px;
+        position: fixed;
+        right: 0;
+        top: 350px;
+        opacity: 0.7;
+    }
+    .loginTitle{
+        margin-top: 120px;
+        margin-left: 60px;
+    }
+    .testText2{
+        margin-top: 120px;
+        margin-left: 40px;
+    }
+    .testText{
+        margin-top: 120px;
+        margin-left: 40px;
+    }
+}
